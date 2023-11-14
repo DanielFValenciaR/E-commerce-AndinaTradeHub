@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mercado Libre - OLX</title>
+    <link rel="stylesheet" href="./Library/Bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Oxygen:wght@300&family=Poppins:wght@300&family=Questrial&family=Quicksand&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Styles/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+            <div class="d-flex">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                    aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">MercadoLibre</a>
+            </div>
+            
+            <!-- <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form> -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header justify-content-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Crear Cuenta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Vender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lista de Productos</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Joyería</a></li>
+                                <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="#">Zapatos</a></li>
+                                <li><a class="dropdown-item" href="#">Ropa</a></li>
+                                <li><a class="dropdown-item" href="#">Videojuegos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="images-carousel">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item center-block active">
+                        <img src="./Styles/Images/audifonos.jpg" class="d-block w-100" alt="Audifonos">
+                    </div>
+                    <div class="carousel-item center-block">
+                        <img src="./Styles/Images/portatil.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Styles/Images/zapatos.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./Styles/Images/reloj.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    
+    <script src="./Library/Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <div class="container-fluid text-center">
+        <div class="row primeros">
+            <div class="col-sm-5 col-md-8" style="background-color: red;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eum nihil magni tempora nisi veritatis ipsam labore aut ducimus! Vero quidem quibusdam enim ut atque dolorem cum doloribus ullam! Cum?</p>
+            </div>
+            <div class="col-sm-5 col-md-2" style="background-color: aqua;">
+                <h3>Esto es una prueba de uso</h3>
+            </div>
+            <div class="col-sm-2 col-md-2" style="background-color: blue;">
+                Column
+            </div>
+        </div>
+    </div> -->
