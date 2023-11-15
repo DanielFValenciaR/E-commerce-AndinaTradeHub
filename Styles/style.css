@@ -94,6 +94,15 @@ body{
     background-color: white;
 }
 
+.row div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    height: 100%;
+}
+
 
 /* @media (min-width: 768px) {
     .navbar-nav {
