@@ -1,12 +1,12 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: orange;
+    background-color: #ffc219;
     font-family: 'Quicksand', sans-serif;
 }
 
 .navbar{
-    background-color: rgb(121, 206, 221);
+    background-color: #029daf;
 }
 
 .navbar-brand{
@@ -20,7 +20,7 @@ body{
 }
 
 .offcanvas div{
-    background-color: rgb(121, 206, 221);
+    background-color: #029daf;
 }
 
 .navbar-nav {
@@ -36,7 +36,7 @@ body{
 }
 
 .dropdown-menu{
-    background-color: rgb(121, 206, 221);
+    background-color: #029daf;
     box-shadow: 0 4px 18px black;
     border-radius: 8px;
 }
@@ -48,7 +48,7 @@ body{
 
 .dropdown-item:hover{
     color: black;
-    background-color:rgb(121, 206, 221);
+    background-color:#029daf;
 }
 
 .images-carousel{
@@ -61,6 +61,39 @@ body{
 	height: 400px;
 	object-fit: contain;
 }
+
+.container-aboutUs{
+    margin: 55px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px black;
+    background-color: rgb(117, 107, 107);
+    color: white;
+}
+
+.container-aboutUs .aboutUs h2{
+    font-size: 28px;
+}
+
+.aboutUs{
+    text-align: center;
+}
+
+.container-aboutUs .aboutUs p {
+    font-size: 17px;
+}
+
+.container{
+    margin-left: 10%;
+}
+
+.row div{
+    border: 1px solid rgb(230, 232, 238);
+    width: 180px;
+    height: 180px;
+    background-color: white;
+}
+
 
 /* @media (min-width: 768px) {
     .navbar-nav {
