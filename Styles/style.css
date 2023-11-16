@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #ffc219;
+    background-color: #EBEBEB;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -16,7 +16,7 @@ body{
 
 .navbar-toggler-icon {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .offcanvas div{
@@ -94,6 +94,10 @@ body{
     background-color: white;
 }
 
+.row div:hover{
+    background-color: #d5deeb;
+}
+
 .row div a{
     width: 150px;
     height: 100%;
@@ -103,6 +107,12 @@ body{
     justify-content: center;
     flex-direction: column;
 }
+
+div a img{
+    margin-top: 10px;
+}
+
+
 
 
 
