@@ -16,7 +16,7 @@ body{
 
 .navbar-toggler-icon {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .offcanvas div{
@@ -94,18 +94,3 @@ body{
     background-color: white;
 }
 
-
-/* @media (min-width: 768px) {
-    .navbar-nav {
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .navbar-nav .nav-item {
-        margin-right: 10px; 
-    }
-
-    .navbar-toggler {
-        display: none; 
-    }
-} */
