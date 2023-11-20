@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Oxygen:wght@300&family=Poppins:wght@300&family=Questrial&family=Quicksand&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Library/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Styles/vender.css">
+</head>
+<body>
+    <main class="main-container">
+        <form class="form">
+            <h2>Vende tus productos</h2>
+            <div class="elements-container">
+                <select class="form-select" id="select" autocomplete="on" required>
+                    <option selected disabled>Categorias</option>
+                </select>
+                <label>Categorías</label>
+            </div>
+            <div class="elements-container">
+                <input type="text" required>
+                <label>Título del producto</label>
+            </div>
+            <div class="elements-container">
+                <textarea name="descripción" id="descripcion" cols="30" rows="10" required></textarea>
+                <label>Descripción</label>
+            </div>
+            <div class="elements-container">
+                <input type="number" required>
+                <label>$Precio</label>
+            </div>
+            <div class="elements-container images">
+                <label for="file-input1" class="add-image">
+                    <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
+                    <input type="file" id="file-input1" accept="image/*" multiple required>
+                    <img class="img-preview" alt="Vista previa de la imagen">
+                </label>
+                <label for="file-input2" class="add-image">
+                    <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
+                    <input type="file" id="file-input2" accept="image/*" multiple required>
+                    <img class="img-preview" alt="Vista previa de la imagen">
+                </label>
+                <label for="file-input3" class="add-image">
+                    <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
+                    <input type="file" id="file-input3" accept="image/*" multiple required>
+                    <img class="img-preview" alt="Vista previa de la imagen">
+                </label>
+            </div>
+            <div class="elements-container buttons">
+                <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                <button type="button" class="btn btn-outline-success">Confirmar</button>
+            </div>
+        </form>
+    </main>
+        
+
+    
+    <script src="../Scripts/vender.js"></script>
+</body>
+</html>
