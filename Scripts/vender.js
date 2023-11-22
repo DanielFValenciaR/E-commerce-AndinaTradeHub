@@ -1,9 +1,13 @@
-let labels = document.querySelectorAll(".add-image");
+let labels = document.querySelectorAll(".label");
 let files = document.querySelectorAll("input[type='file']");
 let vistaFoto = document.querySelectorAll('.img-preview');
 
+labels.forEach(label => {
+    label.innerHTML = label.innerText.split('').map((letras, i) => `<span style="transition-delay: ${i*30}ms">${letras}</span>`).join('');
+})
+
 // Agrega un evento de cambio a cada input
-files.forEach(function(input, index) {
+files.forEach((input, index) => {
     input.addEventListener("change", function() {
         mostrarImagen(input, vistaFoto[index]);
         // Deshabilitar el input después de cargar la imagen
@@ -26,3 +30,4 @@ function mostrarImagen(input, vistaFoto) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+

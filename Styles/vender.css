@@ -10,22 +10,23 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: aqua;
+    background-color: #f8f9fa;
 }
 
 .form{
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #ccc;
+    background-color: #fff;
     padding: 15px 100px;
     margin: 20px;
     border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form h2{
     margin-bottom: 30px;
-    color: #fff;
+    color: #333;
     text-transform: uppercase;
     font-size: 1.30em;
     letter-spacing: 0.1em;
@@ -34,24 +35,31 @@ body{
 .elements-container{
     position: relative;
     width: 450px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .elements-container select{
     position: relative;
     width: 100%;
+    border: 2px solid #555;
+    background-color: #fff;
+    color: #333;
 }
 
 .elements-container input{
     position: relative;
     width: 100%;
-    padding: 3px 0;
+    padding: 10px 0;
     background: transparent;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #555;
     outline: none;
-    color: #fff;
+    color: #333;
     font-size: 1em;
+}
+
+.texarea{
+    margin-top: 20px;
 }
 
 .elements-container textarea{
@@ -61,19 +69,59 @@ body{
     max-width: 100%;
     outline: none;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid #555;
     background: transparent;
-    color: #fff;
+    color: #333;
     font-size: 1em;
 }
 
-.elements-container button{
-    width: 50%;
-    padding: 15px 0;
-    cursor: pointer;
+.elements-container .label{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    color: #555;
+    padding: 10px 0;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding: 0 5px;
 }
 
-.images{
+.elements-container .label span{
+    position: relative;
+    display: inline-flex;
+    letter-spacing: 0.15em;
+    transition: 0.2s ease-in-out;
+}
+
+.elements-container input:focus ~ .label span,
+.elements-container input:valid ~ .label span
+{
+    color: #17a2b8;
+    letter-spacing: 0.15em;
+    transform: translateY(-15px);
+}
+
+.elements-container input:focus,
+.elements-container input:valid
+{
+    border-bottom: 2px solid #17a2b8;
+}
+
+.elements-container textarea:focus ~ .label span,
+.elements-container textarea:valid ~ .label span
+{
+    color: #17a2b8;
+    letter-spacing: 0.15em;
+    transform: translateY(-25px);
+}
+
+.elements-container textarea:focus,
+.elements-container textarea:valid
+{
+    border: 1px solid #17a2b8;
+}
+
+.images-container{
     display: flex;
     gap: 30px;
 }
@@ -82,8 +130,8 @@ body{
     display: inline-block;
     position: relative;
     cursor: pointer;
-    border: 1px solid black;
-    /* padding: 5px 10px; */
+    border: 1px solid #555;
+    border-radius: 5px;
 }
 
 .img-fluid{
@@ -100,12 +148,19 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: fill;
+}
+
+.elements-container button{
+    width: 50%;
+    padding: 15px 0;
+    cursor: pointer;
 }
 
 .buttons{
     display: flex;
     gap: 20px;
 }
+

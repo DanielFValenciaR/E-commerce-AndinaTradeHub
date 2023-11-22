@@ -16,21 +16,20 @@
                 <select class="form-select" id="select" autocomplete="on" required>
                     <option selected disabled>Categorias</option>
                 </select>
-                <label>Categorías</label>
             </div>
             <div class="elements-container">
                 <input type="text" required>
-                <label>Título del producto</label>
+                <label class="label">Título &nbsp del &nbsp producto</label>
             </div>
-            <div class="elements-container">
+            <div class="elements-container texarea">
                 <textarea name="descripción" id="descripcion" cols="30" rows="10" required></textarea>
-                <label>Descripción</label>
+                <label class="label label-textarea">Descripción</label>
             </div>
             <div class="elements-container">
                 <input type="number" required>
-                <label>$Precio</label>
+                <label class="label">$Precio</label>
             </div>
-            <div class="elements-container images">
+            <div class="elements-container images-container">
                 <label for="file-input1" class="add-image">
                     <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
                     <input type="file" id="file-input1" accept="image/*" multiple required>
@@ -55,7 +54,6 @@
     </main>
         
 
-    
     <script src="../Scripts/vender.js"></script>
 </body>
 </html>
