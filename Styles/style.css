@@ -13,13 +13,20 @@ body{
     background-color: #029daf;
 }
 
+.navbar-nav-ul{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-weight: bolder;
+    list-style: none;
+}
+
 .navbar-brand{
     font-weight: bolder;
     margin-left: 30px;
 }
 
 .navbar-toggler-icon {
-    display: flex;
     justify-content: flex-end;
 }
 
@@ -56,7 +63,6 @@ body{
 }
 
 .images-carousel{
-    /* border: 5px solid red; */
     margin: 80px 150px 20px;
 }
 
@@ -75,7 +81,7 @@ body{
 }
 
 .container-aboutUs .aboutUs h2{
-    font-size: 28px;
+    font-size: 25px;
     color: white;
 }
 
@@ -84,7 +90,7 @@ body{
 }
 
 .container-aboutUs .aboutUs p {
-    font-size: 20px;
+    font-size: 18px;
     color: white;
 }
 
