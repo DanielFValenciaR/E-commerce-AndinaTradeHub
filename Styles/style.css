@@ -1,8 +1,12 @@
-body{
+*{
     margin: 0;
     padding: 0;
-    background-color: #EBEBEB;
+    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-color: #EBEBEB;
 }
 
 .navbar{
@@ -67,12 +71,12 @@ body{
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 18px black;
-    background-color: rgb(117, 107, 107);
-    color: white;
+    background-color: #A39D9D;
 }
 
 .container-aboutUs .aboutUs h2{
     font-size: 28px;
+    color: white;
 }
 
 .aboutUs{
@@ -80,7 +84,8 @@ body{
 }
 
 .container-aboutUs .aboutUs p {
-    font-size: 17px;
+    font-size: 20px;
+    color: white;
 }
 
 .container{
@@ -88,7 +93,7 @@ body{
 }
 
 .row div{
-    border: 1px solid rgb(230, 232, 238);
+    border: 2px solid rgb(230, 232, 238);
     width: 180px;
     height: 180px;
     background-color: white;
@@ -106,28 +111,99 @@ body{
     text-decoration: none;
     justify-content: center;
     flex-direction: column;
+    color: #2E86C1 ;
 }
 
-div a img{
+.container-category a img{
     margin-top: 25px;
 }
 
 
 
+.pie{
+    background: black;
+    margin-top: 50px;
+}
 
+.logo img{
+    width: 40px;
+}
 
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
 
-/* @media (min-width: 768px) {
-    .navbar-nav {
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .navbar-nav .nav-item {
-        margin-right: 10px; 
-    }
+span{
+    font-size: 23px;
+}
+.fb, .tw, .in, .li, .yt{
+    padding: 8px;
+    border-radius: 20px;
+    color: white;
+}
 
-    .navbar-toggler {
-        display: none; 
-    }
-} */
+.fb{
+    background: rgb(0, 81, 255);
+}
+
+.tw{
+    background: rgb(0, 140, 255);
+}
+.in{
+    background: rgb(255, 0, 179);
+}
+.li{
+    background: rgb(0, 102, 255);
+}
+.yt{
+    background: rgb(255, 0, 0);
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+.logotipo{
+    font-size: 18px;
+    color: white;
+}
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.section div{
+    display: flex;
+    flex-direction: column;
+}
+
+div h2{
+    color: white;
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+a, p{
+    color: rgba(255, 255, 255, 0.527);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 17px;
+}
+
+.derechos{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: black;
+    color: white;
+}
