@@ -18,18 +18,19 @@
             <a class="navbar-brand" href="#">AndinaTradeHub</a>
                 <ul class="navbar-nav-ul">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ingresar</a> 
+                        <a class="nav-link" href="./Views/login.html">Ingresar</a> 
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Productos</a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categorías</a> 
+                        <a class="nav-link" href="#idContainer">Categorías</a> 
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Imagen corporativa</a> 
                     </li>
                 </ul>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
                     aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,30 +61,34 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#idProductos" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Categorías
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Joyería</a></li>
-                                <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
-                                <li><a class="dropdown-item" href="#">Zapatos</a></li>
-                                <li><a class="dropdown-item" href="#">Ropa</a></li>
-                                <li><a class="dropdown-item" href="#">Videojuegos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Joyería</a></li>
+                                <li><a class="dropdown-item" href="#idRow1"">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1"">Zapatos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1"">Ropa</a></li>
+                                <li><a class="dropdown-item" href="#idRow1"">Videojuegos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Tecnología</a></li>
 
-                                <li><a class="dropdown-item" href="#">Tecnología</a></li>
-                                <li><a class="dropdown-item" href="#">Vehículos</a></li>
-                                <li><a class="dropdown-item" href="#">Cuidado y belleza</a></li>
-                                <li><a class="dropdown-item" href="#">Hogar</a></li>
-                                <li><a class="dropdown-item" href="#">Mascotas</a></li>
-                                <li><a class="dropdown-item" href="#">Librería</a></li>
-                                <li><a class="dropdown-item" href="#">Floristería</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Vehículos</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Cuidado y belleza</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Hogar</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Mascotas</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Librería</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Floristería</a></li>
                             </ul>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#idAboutUs">¿Quiénes somos?</a>
                             </li>
 
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -168,9 +173,9 @@
             </div>
         </section>
 
-        <div id="id" class="container">
-            <div class="row">
-                <div class="col-3 container-category">
+        <div id="idContainer" class="container">
+            <div id="idRow1" class="row">
+                <div  class="col-3 container-category">
                     <a href="">Joyería
                         <img src="./Styles/Images/Categorías/anillo.png" alt="Anillo"/>
                     </a>
@@ -207,7 +212,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div id="idRow2" class="row">
                 <div class="col-3 container-category">
                     <a href="">Vehículos
                         <img src="./Styles/Images/Categorías/vehículos.png" alt="Carro híbrido"/>

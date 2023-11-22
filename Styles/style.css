@@ -21,6 +21,7 @@ body{
     list-style: none;
 }
 
+
 .navbar-brand{
     font-weight: bolder;
     margin-left: 30px;
@@ -70,6 +71,11 @@ body{
     width: 300px;
 	height: 400px;
 	object-fit: contain;
+}
+
+.btn{
+    background-color: black;
+    color:white;
 }
 
 .container-aboutUs{
