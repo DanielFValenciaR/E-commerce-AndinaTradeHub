@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AndinaTradeHub</title>
     <link rel="stylesheet" href="./Library/Bootstrap/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Oxygen:wght@300&family=Poppins:wght@300&family=Questrial&family=Quicksand&family=Raleway:wght@300&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./Styles/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-dark fixed-top">
+    <nav class="navbar navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">AndinaTradeHub</a>
+            <div class="andinaLogo">
+                <a class="navbar-brand">
+                    <img src="./Styles/Images/Logo/andinaTradeHub.png" alt="LogoAndinaTradeHub">AndinaTradeHub
+                    </a>
+            </div>
                 <ul class="navbar-nav-ul">
                     <li class="nav-item">
                         <a class="nav-link" href="./Views/login.html">Ingresar</a> 
@@ -27,7 +29,7 @@
                         <a class="nav-link" href="#idContainer">Categorías</a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Imagen corporativa</a> 
+                        <a class="nav-link" href="./Views/imagenCorporativa.html">Imagen corporativa</a> 
                     </li>
                 </ul>
 
@@ -97,6 +99,8 @@
     </nav>
 
     <main>
+
+        <h1>¡Bienvenido a AndinaTradeHub!</h1>
         <section class="images-carousel">
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
@@ -176,7 +180,7 @@
         <div id="idContainer" class="container">
             <div id="idRow1" class="row">
                 <div  class="col-3 container-category">
-                    <a href="">Joyería
+                    <a id="jy" href="">Joyería
                         <img src="./Styles/Images/Categorías/anillo.png" alt="Anillo"/>
                     </a>
                 </div>
@@ -220,7 +224,7 @@
                 </div>
 
                 <div class="col-3 container-category">
-                    <a href="">Cuidado y belleza
+                    <a href="">Belleza
                         <img src="./Styles/Images/Categorías/maquillaje.png" alt="Pestañina"/>
                     </a>
                 </div>
@@ -254,7 +258,7 @@
     <footer class="pie">
         <div class="header">
             <div class="logo">
-                <img src="https://img.freepik.com/vector-gratis/vector-degradado-logotipo-colorido-pajaro_343694-1365.jpg" alt="Ave">
+                <img src="./Styles/Images/Logo/andinaTradeHub.png" alt="Logo">
                 <p class="logotipo">AndinaTradeHub</p>
             </div>
             <div class="redes">
@@ -265,7 +269,7 @@
                 <span class="yt"><i class="fa-brands fa-youtube"></i></span>
             </div>
         </div>
-        <hr>
+        
         <div class="section">
             <div>
                 <h2>AndinaTradeHub</h2>
