@@ -5,10 +5,6 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-body{
-    background-color: #EBEBEB;
-}
-
 .navbar{
     background-color: #029daf;
 }
@@ -74,86 +70,81 @@ body{
     background-color:#029daf;
 }
 
-h1{
-    margin: 15px;
-    padding: 15px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    color:#029daf;
-}
-
-.images-carousel{
-    margin: 40px 150px 20px;
-}
-
-.d-block{
-    width: 300px;
-	height: 400px;
-	object-fit: contain;
-}
-
 .btn{
     background-color: black;
     color:white;
 }
 
-.container-aboutUs{
-    border: 2px solid #A39D9D;
-    margin: 55px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px black;
-    background-color: #A39D9D;
+img main{
+    background-image: url(/Styles/Images/Logo/andinaTradeHub.png);
 }
 
-.container-aboutUs .aboutUs h2{
-    font-size: 25px;
-    color: white;
+main{
+    display: flex;
+    justify-content: center;
 }
 
-.aboutUs{
+.cont-corpo{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    opacity: 0.4;
+}
+
+.cont-text{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 950px;
+    height: 950px;
+    border-radius: 18px;
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5); 
+    opacity: 0.8;
+}
+
+.cont-text{
+    box-shadow: 0 10px 20px black;
+}
+
+.cont-text h2{
+    margin: 15px;
+    padding: 15px;
+    color:#029daf;
+    font-size: 30px;
+    font-weight:bold;
     text-align: center;
 }
 
-.container-aboutUs .aboutUs p {
-    font-size: 18px;
-    color: white;
+.cont-text ul{
+    list-style: none;
 }
 
-.container{
-    margin-left: 10%;
+.cont-text h3{
+    font-weight: bold;
+    font-size: 25px;
 }
 
-.row div{
-    border: 2px solid rgb(230, 232, 238);
-    width: 180px;
-    height: 180px;
-    background-color: white;
+.cont-text p{
+    font-size: 20px;
 }
 
-.row div:hover{
-    background-color: #d5deeb;
+.container-text h3{
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+    color:#029daf;
 }
 
-.row div a{
-    width: 150px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    flex-direction: column;
-    color: #2E86C1 ;
+.parr-mot{
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.container-category a img{
-    margin-top: 25px;
-}
-
-
-
-.pie{
+/*.pie{
     background: black;
     margin-top: 50px;
     padding: 10px;
@@ -243,4 +234,5 @@ a, p{
     padding: 5px;
     background: black;
     color: white;
-}
+}*/
+
