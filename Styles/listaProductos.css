@@ -24,14 +24,15 @@ body {
     max-width: 144rem;
     padding: 0 2rem;
     margin: 0 auto;
-    background-color: beige;
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
 
 .products {
     position: relative;
     padding: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3rem;
 }
 
@@ -39,12 +40,13 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    background: #fff;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 58%, rgba(150,150,150,1) 100%);
     border-radius: 0.6rem;
     box-shadow: 0rem 0.1rem 1rem rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    cursor: grab;
     transition: all 400ms ease;
 }
 
@@ -56,20 +58,21 @@ body {
 .product .link-product {
     text-decoration: none;
     color: #333;
-    cursor: pointer;
+    cursor: grab;
     /* background-color: aqua; */
 }
 
 .product .product-img {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: fill;
     margin-top: 1rem;
+    /* filter: drop-shadow(0 5rem 4rem #0009); */
     /* box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5); */
 }
 
 .product-info {
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
 .product .product-title {
@@ -79,7 +82,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Número de líneas a mostrar antes de agregar puntos suspensivos */
+    -webkit-line-clamp: 1; /* Número de líneas a mostrar antes de agregar puntos suspensivos */
     -webkit-box-orient: vertical;
 }
 
@@ -92,22 +95,52 @@ body {
 }
 
 .product-title,
-.product-price-container,
 .product-description,
 .product-category {
     padding: 0.5rem 0;
 }
 
 .product-price-container {
-    padding-top: 2rem;
+    padding: 1.5rem 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    gap: 6rem;
+}
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .product-price-container button {
     border: none;
+    background: transparent;
 }
+
+.product-price-container button:hover{
+    animation-name: surprise;
+        -webkit-animation-name: surprise;
+        -moz-animation-name: surprise;
+    animation-duration: .8s;
+        -webkit-animation-duration: .8s;
+        -moz-animation-duration: .8s;
+}
+
+    @keyframes surprise
+    {
+        0% {transform: rotate(0deg) scale(1,1);}
+        10% {transform: rotate(7deg) scale(2,2);}
+        20% {transform: rotate(-7deg) scale(2,2);}
+        30% {transform: rotate(7deg) scale(2,2);}
+        40% {transform: rotate(-7deg) scale(2,2);}
+        50% {transform: rotate(7deg) scale(2,2);}
+        60% {transform: rotate(-7deg) scale(2,2);}
+        70% {transform: rotate(7deg) scale(2,2);}
+        80% {transform: rotate(-7deg) scale(2,2);}
+        90% {transform: rotate(7deg) scale(2,2);}
+        100% {transform: rotate(0deg) scale(1,1);}
+    }
 
 .add-to-cart {
     background: rgb(16, 8, 69);
@@ -124,3 +157,59 @@ body {
 .add-to-cart ion-icon {
     font-size: 3rem;
 }
+
+
+
+/* Paginación, cambio de páginas */
+
+.paginacion {
+    text-align: center;
+    padding: 2rem 0;
+    user-select: none;
+}
+
+.paginacion .elemento-pagina {
+    display: inline-block;
+    margin: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgb(1 1 1 / 40%);
+    border: transparent;
+}
+
+.paginacion .elemento-pagina .pagina-link {
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 4rem;
+    text-decoration: none;
+}
+
+.previous-page, .next-page {
+    background-color: #0AB1CF;
+    border-radius: 4.5rem;
+    transition: 0.3s ease;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.previous-page:hover {
+    transform: translateX(-0.5rem);
+}
+
+.next-page:hover {
+    transform: translateX(0.5rem);
+}
+
+.current-page, .dots {
+    background: #CCC;
+    width: 4.5rem;
+    border-radius: 50%;
+}
+
+.activo {
+    background: #0AB1CF;
+}
+
+.disable {
+    background: #CCC;
+}
+
+
