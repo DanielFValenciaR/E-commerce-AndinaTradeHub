@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar{
+    background-color: #029daf;
+}
+
+.andinaLogo a img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.navbar-nav-ul{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-weight: bolder;
+    list-style: none;
+    margin-top: 15px;
+    padding-right: 18vw;
+}
+
+
+.navbar-brand{
+    font-weight: bolder;
+    margin-left: 15px;
+}
+.navbar-brand img{
+    margin-right: 15px;
+}
+
+.navbar-toggler-icon {
+    justify-content: flex-end;
+}
+
+.offcanvas div{
+    background-color: #029daf;
+}
+
+.navbar-nav {
+    font-weight: bolder;
+}
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.dropdown-menu{
+    background-color: #029daf;
+    box-shadow: 0 4px 18px black;
+    border-radius: 8px;
+}
+
+.dropdown-item{
+    color:white;
+    font-weight: bolder;
+}
+
+.dropdown-item:hover{
+    color: black;
+    background-color:#029daf;
+}
+
+.btn{
+    background-color: black;
+    color:white;
+}
+
+.pag-construccion{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-text{
+    text-align: center;
+}
+
+.container-text h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #029daf;
+}
+
+.container-text p{
+    font-size: 25px;
+}
+
+.pag-construccion img{
+    width: 800px;
+    
+}
+
