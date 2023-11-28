@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar{
+    background-color: #029daf;
+}
+
+.andinaLogo a img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.navbar-nav-ul{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-weight: bolder;
+    list-style: none;
+    margin-top: 15px;
+    padding-right: 18vw;
+}
+
+
+.navbar-brand{
+    font-weight: bolder;
+    margin-left: 15px;
+}
+.navbar-brand img{
+    margin-right: 15px;
+}
+
+.navbar-toggler-icon {
+    justify-content: flex-end;
+}
+
+.offcanvas div{
+    background-color: #029daf;
+}
+
+.navbar-nav {
+    font-weight: bolder;
+}
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.dropdown-menu{
+    background-color: #029daf;
+    box-shadow: 0 4px 18px black;
+    border-radius: 8px;
+}
+
+.dropdown-item{
+    color:white;
+    font-weight: bolder;
+}
+
+.dropdown-item:hover{
+    color: black;
+    background-color:#029daf;
+}
+
+.btn{
+    background-color: black;
+    color:white;
+}
+
+
+.container-car{
+    border: 2px solid red;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    margin: 60px;
+    position: relative;
+}
+
+.container-car img{
+    width: 60px;
+    margin-top: -50px;
+    border-radius: 5px;
+}
+
+.container-car .product-title{
+    margin: 25px 0;
+    text-align: center;
+    font-size: 23px;
+}
+
+.btn-cerrar{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+.container-price{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-price .product-price{
+    font-size: 25px;
+}
+
+.container-buttons{
+    display:flex;
+}
+
+.btn-less, .contador, .btn-more{
+    padding: 3px 10px;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-less{
+    background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+    cursor: pointer;
+}
+
+.contador{
+    background: linear-gradient(90deg, #62dab4, #10bed4);
+    font-size: 18px;
+}
+
+.btn-more{
+    background: linear-gradient(90deg, #a5e29c, #1b7b2c);
+    cursor: pointer;
+}
+
+.container-total{
+    padding: 0 20px;
+}
+.price-total{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.price-total h2, h3{
+    margin: 10px 0;
+}
+
+.price-total h2{
+    font-size: 20px;
+}
+
+.price-total h3{
+    font-size: 30px;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btn-buy{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.btn-buy:hover{
+    box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    -moz-transform:translate(0px,5px);
+}
+
+

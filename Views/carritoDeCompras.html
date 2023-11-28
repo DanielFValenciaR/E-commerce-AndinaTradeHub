@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="../Library/Bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Oxygen:wght@300&family=Poppins:wght@300&family=Questrial&family=Quicksand&family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Styles/carritoDeCompras.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <div class="andinaLogo">
+                <a class="navbar-brand">
+                    <img src="../Styles/Images/Logo/andinaTradeHub.png" alt="LogoAndinaTradeHub">AndinaTradeHub
+                    </a>
+            </div>
+                <ul class="navbar-nav-ul">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Inicio</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Productos</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Views/login.html">Ingresar</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categorías</a> 
+                    </li>
+                </ul>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                    aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header justify-content-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Views/login.html">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Views/login.html">Crear Cuenta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Vender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lista de Productos</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#idProductos" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#idRow1">Joyería</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Zapatos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Ropa</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Videojuegos</a></li>
+                                <li><a class="dropdown-item" href="#idRow1">Tecnología</a></li>
+
+                                <li><a class="dropdown-item" href="#idRow2">Vehículos</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Cuidado y belleza</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Hogar</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Mascotas</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Librería</a></li>
+                                <li><a class="dropdown-item" href="#idRow2">Floristería</a></li>
+                            </ul>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#idAboutUs">¿Quiénes somos?</a>
+                            </li>
+
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+       <section class="container-car">
+            <img src="../Styles/Images/Carrusel/hogar.jpeg">
+            <button class="btn-cerrar">
+                ❌
+            </button>
+            <h3 class="product-title">Nevera</h3>
+            <hr>
+            <div class="container-price">
+                <h4 class="product-price">Precio: $4'725.380</h4>
+                <div class="container-buttons">
+                    <button class="btn-less">
+                        -
+                    </button>
+                    <span class="contador">
+                        1
+                    </span>
+                    <button class="btn-more">
+                        +
+                    </button>
+                </div>
+            </div>
+        </section> 
+
+        <section class="container-total">
+            <hr>
+            <div class="price-total">
+                <h2>Total:</h2>
+                <h3>$4'725.380</h3>
+            </div>
+            <div class="container-btn">
+                <button class="btn-buy">
+                    Comprar
+                </button>
+            </div>
+            
+        </section>
+    </main>
+    <script src="../Library/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/646ac4fad6.js" crossorigin="anonymous"></script>
+</body>
+</html>
