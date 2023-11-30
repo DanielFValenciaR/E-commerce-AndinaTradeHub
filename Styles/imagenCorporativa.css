@@ -144,9 +144,9 @@ main{
     font-weight: bold;
 }
 
-/*.pie{
+.pie{
     background: black;
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 10px;
 }
 
@@ -221,7 +221,14 @@ div h2{
     font-size: 18px;
 }
 
-a, p{
+a, p footer{
+    color: rgba(255, 255, 255, 0.527);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.cont-ubica{
     color: rgba(255, 255, 255, 0.527);
     text-decoration: none;
     padding: 5px;
@@ -234,5 +241,5 @@ a, p{
     padding: 5px;
     background: black;
     color: white;
-}*/
+}
 

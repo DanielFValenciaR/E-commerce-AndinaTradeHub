@@ -85,6 +85,8 @@ h1{
 
 .images-carousel{
     margin: 40px 150px 20px;
+    /*box-shadow: 0 4px 18px black;
+    border-radius: 10px;*/
 }
 
 .d-block{
