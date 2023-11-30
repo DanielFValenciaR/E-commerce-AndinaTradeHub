@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.product-section {
+    margin: 2rem 4rem;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    border: transparent;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 1.5);
+    background-color: transparent;
+    padding: 1.5rem;
+    width: 50rem;
+}
+
+
+/* Carrusel de imagenes */
+.images-container {
+    display: flex;
+    width: 50%;
+}
+
+.images-container img{
+    width: 0rem;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .85;
+    transition: .5s ease;
+}
+
+.images-container img:hover{
+    cursor: crosshair;
+    width: 25rem;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* .product-container .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    text-align: center;
+}
+
+.product-container .image-container img {
+    width: 25rem;
+    height: 25rem;
+    object-fit: scale-down;
+} */
+
+.info-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    padding: 1.5rem 0;
+    /* border: 0.1rem solid black; */
+}
+
+.info-product .product-title {
+    font-size: 2rem;
+}
+
+.info-product .product-price {
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* background-color: brown; */
+}
+
+.buttons-container button {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.description-container, 
+.questions-container {
+    padding-top: 1.5rem;
+    /* border: 0.1rem solid black; */
+}
+
+.description-container {
+    display: inline-block;
+    /* background-color: aqua; */
+}
+
+.questions-container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* background-color: #ccc; */
+}
+
+.description-title,
+.questions-title {
+    margin-bottom: 1rem;
+}
+
+.questions-container .question-form-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.questions-container textarea {
+    resize: none;
+    padding: 1rem;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.questions-container textarea:focus {
+    border: 0.1rem solid red;
+}
+
+.questions-container button {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
