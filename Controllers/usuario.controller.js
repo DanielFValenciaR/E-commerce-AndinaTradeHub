@@ -7,7 +7,6 @@ const login = async (req, res) => {
 
         if (response.rows.length === 1) {
             res.status(200).send({sucess:true , messages:"success", data:response.rows});
-            // res.redirect('../index.html');
         } else { 
             res.status(500).send({sucess:false, messages:"error", data:null});
         }
