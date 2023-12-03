@@ -25,9 +25,45 @@ function mostrarImagen(input, vistaFoto) {
             vistaFoto.src = e.target.result;
             vistaFoto.style.display = "block";
         };
-
         // Lee el contenido del archivo como una URL de datos
         reader.readAsDataURL(input.files[0]);
     }
 }
 
+const urlVender = new URL("http://localhost:3000/vender");
+
+//Al momneto de que cargue la pagina, nos muestre en el select las categorias traidas de la bd
+$(document).ready(function () {
+    (async () => {
+        try {
+            const rawResponse = await fetch(urlVender, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                // No es necesario enviar un body para una solicitud GET
+            });
+            const content = await rawResponse.json();
+
+            if (content.sucess === true) {
+                llenarSelect(content.data);
+            } else {
+                alert('No se pudieron obtener las categorías');
+            }
+        } catch (error) {
+            console.error('Error al obtener categorías: ', error);
+        }
+    })();
+});
+
+function llenarSelect(categorias) {
+    const selectCategoria = $('#selectCategoria');
+
+    $.each(categorias, function (index, categoria) {
+        selectCategoria.append($('<option>', {
+            value: categoria.idcategoria,
+            text: categoria.nombre_categoria
+        }));
+    });
+} 

@@ -13,8 +13,8 @@
         <form class="form">
             <h2>Vende tus productos</h2>
             <div class="elements-container">
-                <select class="form-select" id="select" autocomplete="on" required>
-                    <option selected disabled>Categorias</option>
+                <select class="form-select" id="selectCategoria" required>
+                    <option selected disabled value="">Categoria del producto</option>
                 </select>
             </div>
             <div class="elements-container">
@@ -28,6 +28,10 @@
             <div class="elements-container">
                 <input type="number" required>
                 <label class="label">$Precio</label>
+            </div>
+            <div class="elements-container">
+                <input type="number" required>
+                <label class="label">Cantidad</label>
             </div>
             <div class="elements-container images-container">
                 <label for="file-input1" class="add-image">
@@ -53,7 +57,7 @@
         </form>
     </main>
         
-
+    <script type="text/javascript" src="../Library/Jquery/jquery-3.7.1.min.js"></script>
     <script src="../Scripts/vender.js"></script>
 </body>
 </html>

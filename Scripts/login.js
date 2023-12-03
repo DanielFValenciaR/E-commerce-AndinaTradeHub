@@ -35,6 +35,8 @@ $(document).ready(function() {
     });
 });
 
+
+//Mostrar un alert del login con la conexion a la base de datos
 $("#btnIniciar").on('click', function (event) {
     event.preventDefault();
     
@@ -67,7 +69,7 @@ $("#btnIniciar").on('click', function (event) {
     }
 });
 
-
+//Crear un usuario con el formulario de html
 $("#btnRegistrar").on('click', function (event) {
     event.preventDefault();
 

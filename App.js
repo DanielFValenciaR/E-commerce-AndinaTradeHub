@@ -13,6 +13,7 @@ app.use(express.urlencoded({extended:false}));// capturar cualquier tipo de dato
 app.use(cors());
 
 app.use(require("./Routes/usuario.router.js"));
+app.use(require("./Routes/producto.router.js"));
 
 app.listen(PUERTO,()=>{
     console.log("Servidor iniciado... " + "Puerto:" + PUERTO);
