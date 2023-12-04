@@ -18,41 +18,41 @@
                 </select>
             </div>
             <div class="elements-container">
-                <input type="text" required>
+                <input type="text" id="textNombre" required>
                 <label class="label">Título &nbsp del &nbsp producto</label>
             </div>
             <div class="elements-container texarea">
-                <textarea name="descripción" id="descripcion" cols="30" rows="10" required></textarea>
+                <textarea name="descripción" id="textDescripcion" cols="30" rows="10" required></textarea>
                 <label class="label label-textarea">Descripción</label>
             </div>
             <div class="elements-container">
-                <input type="number" required>
+                <input type="number" id="textPrecio" required >
                 <label class="label">$Precio</label>
             </div>
             <div class="elements-container">
-                <input type="number" required>
+                <input type="number" id="textCantidad" required>
                 <label class="label">Cantidad</label>
             </div>
             <div class="elements-container images-container">
                 <label for="file-input1" class="add-image">
                     <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
-                    <input type="file" id="file-input1" accept="image/*" multiple required>
-                    <img class="img-preview" alt="Vista previa de la imagen">
+                    <input type="file" id="file-input1" accept="image/*" size="1048576" required>
+                    <img class="img-preview" id="imagen1" alt="Vista previa de la imagen">
                 </label>
                 <label for="file-input2" class="add-image">
                     <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
-                    <input type="file" id="file-input2" accept="image/*" multiple required>
-                    <img class="img-preview" alt="Vista previa de la imagen">
+                    <input type="file" id="file-input2" accept="image/*" size="1048576" multiple required>
+                    <img class="img-preview" id="imagen2" alt="Vista previa de la imagen">
                 </label>
                 <label for="file-input3" class="add-image">
                     <img src="/Styles/Images/Vender/camara.png" alt="Icono de cámara" class="img-fluid"> Agregar Foto
-                    <input type="file" id="file-input3" accept="image/*" multiple required>
-                    <img class="img-preview" alt="Vista previa de la imagen">
+                    <input type="file" id="file-input3" accept="image/*" size="1048576" multiple required>
+                    <img class="img-preview" id="imagen3" alt="Vista previa de la imagen">
                 </label>
             </div>
             <div class="elements-container buttons">
-                <button type="button" class="btn btn-outline-danger">Cancelar</button>
-                <button type="button" class="btn btn-outline-success">Confirmar</button>
+                <button type="button" class="btn btn-outline-danger" id="btn-cancelar">Cancelar</button>
+                <button type="button" class="btn btn-outline-success" id="btn-confirmar">Confirmar</button>
             </div>
         </form>
     </main>
