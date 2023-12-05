@@ -12,7 +12,7 @@
 
     <body>
 
-        <!--<nav class="navbar navbar-dark">
+        <nav class="navbar navbar-dark">
             <div class="container-fluid">
                 <div class="andinaLogo">
                     <a class="navbar-brand">
@@ -27,7 +27,7 @@
                             <a class="nav-link" href="../Views/listaProductos.html">Productos</a> 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#idContainer">Categorías</a> 
+                            <a class="nav-link" href="/index.html">Categorías</a> 
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/imagenCorporativa.html">Imagen corporativa</a> 
@@ -48,7 +48,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                                <a class="nav-link" aria-current="page" href="/index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../Views/login.html">Ingresar</a>
@@ -69,23 +69,23 @@
                                     Categorías
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#idRow1">Joyería</a></li>
-                                    <li><a class="dropdown-item" href="#idRow1"">Electrodomésticos</a></li>
-                                    <li><a class="dropdown-item" href="#idRow1"">Zapatos</a></li>
-                                    <li><a class="dropdown-item" href="#idRow1"">Ropa</a></li>
-                                    <li><a class="dropdown-item" href="#idRow1"">Videojuegos</a></li>
-                                    <li><a class="dropdown-item" href="#idRow1">Tecnología</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Joyería</a></li>
+                                    <li><a class="dropdown-item" href="/index.html"">Electrodomésticos</a></li>
+                                    <li><a class="dropdown-item" href="/index.html"">Zapatos</a></li>
+                                    <li><a class="dropdown-item" href="/index.html"">Ropa</a></li>
+                                    <li><a class="dropdown-item" href="/index.html"">Videojuegos</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Tecnología</a></li>
     
-                                    <li><a class="dropdown-item" href="#idRow2">Vehículos</a></li>
-                                    <li><a class="dropdown-item" href="#idRow2">Cuidado y belleza</a></li>
-                                    <li><a class="dropdown-item" href="#idRow2">Hogar</a></li>
-                                    <li><a class="dropdown-item" href="#idRow2">Mascotas</a></li>
-                                    <li><a class="dropdown-item" href="#idRow2">Librería</a></li>
-                                    <li><a class="dropdown-item" href="#idRow2">Floristería</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Vehículos</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Cuidado y belleza</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Hogar</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Mascotas</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Librería</a></li>
+                                    <li><a class="dropdown-item" href="/index.html">Floristería</a></li>
                                 </ul>
     
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#idAboutUs">¿Quiénes somos?</a>
+                                    <a class="nav-link" href="./imagenCorporativa.html">¿Quiénes somos?</a>
                                 </li>
     
                                 <form class="d-flex" role="search">
@@ -97,51 +97,94 @@
                     </div>
                 </div>
             </div>
-        </nav>-->
+        </nav>
 
-        <div class="container" id="container">
-            <div class="form-container sign-up">
-                <form>
-                    <h1>Crear Cuenta</h1>
-                    <span>Llene el siguiente formulario:</span>
-                    <input type="text" placeholder="Nombre Completo" id="textNombre">
-                    <input type="email" placeholder="Correo Electrónico" id="textEmail">
-                    <input type="text" placeholder="Teléfono" id="textTelefono">
-                    <input type="text" placeholder="Usuario" id="textUsuario">
-                    <input type="text" placeholder="Contraseña" id="textContrasena">
-                    <select class="form-select" id="selectMunicipio" autocomplete="on">
-                        <option selected disabled value="">Seleccione su municipio</option>
-                    </select>
-                    <button id="btnRegistrar">Registrarse</button>
-                </form>
-            </div>
-            <div class="form-container sign-in">
-                <form>
-                    <h1>Iniciar Sesión</h1>
-                    <span>Utiliza tu usuario y contraseña</span>
-                    <input type="text" id="usuario" placeholder="Usuario">
-                    <input type="password" id="contrasena" placeholder="Contraseña">
-                    <!-- <a href="#">Olvidaste la contraseña?</a> -->
-                    <button id="btnIniciar">Iniciar Sesión</button>
-                </form>
-            </div>
-            <div class="toggle-container">
-                <div class="toggle">
-                    <div class="toggle-panel toggle-left">
-                        <h1>Bienvenido a AndinaTradeHub!</h1>
-                        <p>Introduzca sus datos para loguearse en la plataforma</p>
-                        <button class="hidden" id="login">Loguearse</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
-                        <h1>Hola Cliente</h1>
-                        <p>Regístrese con sus datos personales para utilizar las funciones de AndinaTradeHub</p>
-                        <button class="hidden" id="register">Crear Usuario</button>
+        <main>
+            <div class="container" id="container">
+                <div class="form-container sign-up">
+                    <form>
+                        <h1>Crear Cuenta</h1>
+                        <span>Llene el siguiente formulario:</span>
+                        <input type="text" placeholder="Nombre Completo" id="textNombre">
+                        <input type="email" placeholder="Correo Electrónico" id="textEmail">
+                        <input type="text" placeholder="Teléfono" id="textTelefono">
+                        <input type="text" placeholder="Usuario" id="textUsuario">
+                        <input type="text" placeholder="Contraseña" id="textContrasena">
+                        <select class="form-select" id="selectMunicipio" autocomplete="on">
+                            <option selected disabled value="">Seleccione su municipio</option>
+                        </select>
+                        <button id="btnRegistrar">Registrarse</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in">
+                    <form>
+                        <h1>Iniciar Sesión</h1>
+                        <span>Utiliza tu usuario y contraseña</span>
+                        <input type="text" id="usuario" placeholder="Usuario">
+                        <input type="password" id="contrasena" placeholder="Contraseña">
+                        <!-- <a href="#">Olvidaste la contraseña?</a> -->
+                        <button id="btnIniciar">Iniciar Sesión</button>
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Bienvenido a AndinaTradeHub!</h1>
+                            <p>Introduzca sus datos para loguearse en la plataforma</p>
+                            <button class="hidden" id="login">Loguearse</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hola Cliente</h1>
+                            <p>Regístrese con sus datos personales para utilizar las funciones de AndinaTradeHub</p>
+                            <button class="hidden" id="register">Crear Usuario</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="pie">
+            <div class="header">
+                <div class="logo">
+                    <img src="../Styles/Images/Logo/andinaTradeHub.png" alt="Logo">
+                    <p class="logotipo">AndinaTradeHub</p>
+                </div>
+                <div class="redes">
+                    <a href="../Views/pagConstrucción.html"><span class="fb"><i class="fa-brands fa-facebook"></i></span></a>  
+                    <a href="../Views/pagConstrucción.html"><span class="tw"><i class="fa-brands fa-twitter"></i></span></a>
+                    <a href="../Views/pagConstrucción.html"><span class="in" ><i class="fa-brands fa-instagram"></i></span></a>
+                    <a href="../Views/pagConstrucción.html"><span class="li"><i class="fa-brands fa-linkedin"></i></span></a>
+                    <a href="../Views/pagConstrucción.html"><span class="yt"><i class="fa-brands fa-youtube"></i></span></a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div>
+                    <h2>AndinaTradeHub</h2>
+                    <a href="#">Inicio</a>
+                    <a href="../Views/imagenCorporativa.html">Acerca de nosotros</a>
+                    <a href="../index.html">Categorías</a>
+                    <a href="../Views/pagConstrucción.html">Contáctanos</a>
+                </div>
+                <div>
+                    <h2>Servicios</h2>
+                    <a href="../Views/vender.html">Venta de productos</a>
+                    <a href="../Views/listaProductos.html">Compra de productos</a>
+                </div>
+                <div>
+                    <h2>Ubicación</h2>
+                    <p>Manizales, Caldas<br>dfvalenciar@unal.edu.co<br>lauravagarciaa1295@gmail.com</p>
+                </div>
+            </div>
+            <div class="derechos">
+                <p>Copyright©2023. All right reserved</p>
+            </div>
+        </footer>
+        
 
         <script type="text/javascript" src="../Library/Jquery/jquery-3.7.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/646ac4fad6.js" crossorigin="anonymous"></script>
+        <script src="../Library/Bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <script src="../Scripts/login.js"></script>
     </body>
