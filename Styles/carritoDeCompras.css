@@ -205,4 +205,97 @@
     -moz-transform:translate(0px,5px);
 }
 
+.pie{
+    background: black;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.logo img{
+    width: 80px;
+    border-radius: 5px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+span{
+    font-size: 23px;
+}
+.fb, .tw, .in, .li, .yt{
+    padding: 8px;
+    border-radius: 20px;
+    color: white;
+}
+
+.fb{
+    background: rgb(0, 81, 255);
+}
+
+.tw{
+    background: rgb(0, 140, 255);
+}
+.in{
+    background: rgb(255, 0, 179);
+}
+.li{
+    background: rgb(0, 102, 255);
+}
+.yt{
+    background: rgb(255, 0, 0);
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.logotipo{
+    font-size: 18px;
+    color: white;
+}
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.section div{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+div h2{
+    color: white;
+    padding: 2px 0;
+    margin: 2px;
+    font-size: 18px;
+}
+
+a, p{
+    color: rgba(255, 255, 255, 0.527);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+.derechos{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background: black;
+    color: white;
+}
+
 

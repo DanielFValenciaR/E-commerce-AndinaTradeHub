@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style-type: none;
-    text-decoration: none;
+    /*list-style-type: none;
+    text-decoration: none;*/
     font-family: 'Quicksand', sans-serif;   
 }
 
-html {
+/*html {
     font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-}
+}*/
 
-body {
+/*body {
     font-size: 1.6rem;
-}
+}*/
 
 .navbar{
     background-color: rgb(3, 159, 176);
@@ -33,21 +30,41 @@ body {
 .navbar-nav-ul{
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    gap: 20px;
     font-weight: bolder;
     list-style: none;
     margin-top: 15px;
-    padding-right: 18vw;
+    padding-right: 15vw;
 }
 
+.logo-cart{
+    padding-left: 20vw;
+}
+
+.image-cart{
+    width: 25px;
+    height: 25px;
+    color:white;
+}
+
+.contador {
+    border: 1px solid red;
+    padding: 1.5px;
+    background-color: red;
+    border-radius:5000px;
+    font-size: 13px;
+}
 
 .navbar-brand{
     font-weight: bolder;
     margin-left: 15px;
+    font-size: 20px;
 }
+
 .navbar-brand img{
     margin-right: 15px;
 }
+
 
 .navbar-toggler-icon {
     justify-content: flex-end;
@@ -85,6 +102,11 @@ body {
     background-color:#029daf;
 }
 
+.btn{
+    background-color: black;
+    color:white;
+}
+
 
 /* Todo lo del body */
 .container {
@@ -92,7 +114,8 @@ body {
     max-width: 144rem;
     padding: 1rem 3rem;
     margin: 0 auto;
-    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    /*background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);*/
+    background-color: #EBEBEB;
 }
 
 .products {
@@ -170,6 +193,7 @@ body {
 .product-description,
 .product-category {
     padding: 0.5rem 0;
+    color: black;
 }
 
 .product-price-container {
@@ -283,5 +307,100 @@ body {
 .disable {
     background: #CCC;
 }
+
+
+
+.pie{
+    background: black;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.logo img{
+    width: 80px;
+    border-radius: 5px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+span{
+    font-size: 23px;
+}
+.fb, .tw, .in, .li, .yt{
+    padding: 8px;
+    border-radius: 20px;
+    color: white;
+}
+
+.fb{
+    background: rgb(0, 81, 255);
+}
+
+.tw{
+    background: rgb(0, 140, 255);
+}
+.in{
+    background: rgb(255, 0, 179);
+}
+.li{
+    background: rgb(0, 102, 255);
+}
+.yt{
+    background: rgb(255, 0, 0);
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.logotipo{
+    font-size: 18px;
+    color: white;
+}
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.section div{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+div h2{
+    color: white;
+    padding: 2px 0;
+    margin: 2px;
+    font-size: 18px;
+}
+
+a, p{
+    color: rgba(255, 255, 255, 0.527);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.derechos{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background: black;
+    color: white;
+}
+
 
 
