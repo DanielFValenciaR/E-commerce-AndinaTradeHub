@@ -10,7 +10,7 @@ body{
 }
 
 .navbar{
-    background-color: #029daf;
+    background-color: rgb(3, 159, 176);
 }
 
 .andinaLogo a img{
@@ -101,7 +101,7 @@ h1{
 }
 
 .container-aboutUs{
-    border: 2px solid #A39D9D;
+    border: 2px solid rgb(163, 158, 158);
     margin: 55px;
     padding: 30px;
     border-radius: 12px;
