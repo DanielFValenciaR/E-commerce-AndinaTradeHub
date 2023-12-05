@@ -7,17 +7,6 @@ labels.forEach(label => {
 
 //Al momento de que cargue la pagina, nos muestre en el select las categorias traidas de la bd
 $(document).ready(function () {
-    function llenarSelect(categorias) {
-        const selectCategoria = $('#selectCategoria');
-    
-        $.each(categorias, function (index, categoria) {
-            selectCategoria.append($('<option>', {
-                value: categoria.idcategoria,
-                text: categoria.nombre_categoria
-            }));
-        });
-    }; 
-
     (async () => {
         try {
             const rawResponse = await fetch(urlVender, {
@@ -39,6 +28,17 @@ $(document).ready(function () {
             console.error('Error al obtener categorías: ', error);
         }
     })();
+
+    function llenarSelect(categorias) {
+        const selectCategoria = $('#selectCategoria');
+    
+        $.each(categorias, function (index, categoria) {
+            selectCategoria.append($('<option>', {
+                value: categoria.idcategoria,
+                text: categoria.nombre_categoria
+            }));
+        });
+    }; 
 });
 
 
