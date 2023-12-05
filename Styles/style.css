@@ -13,6 +13,7 @@ body{
     background-color: rgb(3, 159, 176);
 }
 
+
 .andinaLogo a img{
     width: 50px;
     height: 50px;
@@ -238,6 +239,7 @@ a, p{
     padding: 5px;
     font-size: 15px;
 }
+
 
 .derechos{
     display: flex;
