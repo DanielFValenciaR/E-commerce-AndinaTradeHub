@@ -160,7 +160,6 @@ function limpiarProducto() {
 
     $("#imagen3").attr('src', '').attr('alt', '');
     $("#imagen3").hide();
-
 };
 
 

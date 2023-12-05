@@ -35,7 +35,7 @@ body{
 .elements-container{
     position: relative;
     width: 450px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .elements-container select{
@@ -49,7 +49,7 @@ body{
 .elements-container input{
     position: relative;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 0 0px 10px;
     background: transparent;
     border: none;
     border-bottom: 2px solid #555;
@@ -89,7 +89,7 @@ body{
 .elements-container .label span{
     position: relative;
     display: inline-flex;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.10em;
     transition: 0.2s ease-in-out;
 }
 

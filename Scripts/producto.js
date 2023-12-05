@@ -86,3 +86,4 @@ $(document).ready(function () {
     }; 
 });
 
+// <p class="product-description">${description.length > 80 ? description.substring(0, 80).concat(' ... más') : description}</p>
