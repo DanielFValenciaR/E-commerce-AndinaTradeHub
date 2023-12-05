@@ -15,6 +15,7 @@ app.use(cors());
 app.use(require("./Routes/usuario.router.js"));
 app.use(require("./Routes/vender.router.js"));
 app.use(require("./Routes/listaProductos.router.js"));
+app.use(require("./Routes/producto.router.js"));
 
 app.listen(PUERTO,()=>{
     console.log("Servidor iniciado... " + "Puerto:" + PUERTO);

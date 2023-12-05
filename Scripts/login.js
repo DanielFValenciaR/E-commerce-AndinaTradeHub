@@ -59,6 +59,7 @@ $("#btnIniciar").on('click', function (event) {
             if (content.sucess === true) {
                 alert("Acceso concedido");
                 limpiarLogin();
+                window.location.href = "../Views/listaProductos.html";
             } else {
                 alert("Acceso denegado");
                 limpiarLogin();
@@ -111,8 +112,6 @@ $("#btnRegistrar").on('click', function (event) {
             });
 
             const content = await rawResponse.json();
-            console.log(content);
-            console.log(nombre, correo, telefono, usuario, password, municipio);
 
             if (content.message === 2) {
                 alert("El usuario ya se encuentra registrado. Por favor, elige otro nombre de usuario.");

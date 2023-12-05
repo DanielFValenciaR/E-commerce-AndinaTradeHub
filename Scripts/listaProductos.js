@@ -99,6 +99,10 @@ function productosBD() {
             if (content.sucess === true) {
                 mostrarProductos(content.data);
                 info = content.data;
+                // let id = content.data.idproducto;
+                // localStorage.setItem("id",JSON.stringify(id));
+                
+                
             } else {
                 alert('No se pudieron obtener los productos de la base de datos');
             }
@@ -113,7 +117,7 @@ function productosBD() {
         $.each(products, function (index, producto) {
             productos.append(`
             <div class="product" id="product-${producto.idproducto}">
-                <a href="#" class="link-product">
+                <a href="../Views/producto.html" class="link-product">
                     <img src="${producto.imagen_1}" alt="${producto.nombre_categoria}" class="product-img bd-img">
                     <div class="product-info">
                         <h2 class="product-title">${producto.nombre_producto}</h2>
@@ -134,11 +138,17 @@ function productosBD() {
                 $(this).on("click", function () {
                 const link = $(this).find(".link-product");
                 const productUrl = link.attr("href");
-
+                const idExport = producto.idproducto;
+                console.log(idExport);
+                localStorage.setItem("id",JSON.stringify(idExport));
                 // Redirige a la URL deseada
-                // window.location.href = productUrl;
+                window.location.href = productUrl;
                 });
             });
         });
     }; 
 };
+// content.data.forEach((elemento) => {
+//     const idExport = elemento.idproducto;
+//     console.log(idExport);
+// })

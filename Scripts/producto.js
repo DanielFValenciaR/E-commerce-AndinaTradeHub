@@ -1,4 +1,5 @@
-const urlProducto = new URL("http://localhost:3000/producto")
+import { id } from "./listaProductos";
+const urlProducto = `http://localhost:3000/producto/${id}`;
 // const imagenes = $('.image-container');
 // const infoProducto = $('.info-product');
 // const imagenes = document.querySelector('.image-container');
@@ -30,7 +31,9 @@ const urlProducto = new URL("http://localhost:3000/producto")
 //     fetchProducts('https://fakestoreapi.com/products');
 // });
 
-
+const urlActual = window.location.pathname; // Esto te dará "/producto/5"
+const partesURL = urlActual.split('/'); // Dividir la URL en partes usando '/'
+const productId = partesURL[partesURL.length - 1]; // El último elemento en partesURL es el ID del producto
 
 
 $(document).ready(function () {
@@ -47,7 +50,7 @@ $(document).ready(function () {
             const content = await rawResponse.json();
             
             if (content.sucess === true) {
-                mostrarProductos(content.data);
+                mostrarProducto(content.data);
             } else {
                 alert('No se pudieron obtener los productos');
             }
@@ -56,11 +59,11 @@ $(document).ready(function () {
         }
     })();
 
-    function mostrarProductos(products) {
-        const productos = $('.products');
+    function mostrarProducto(product) {
+        const containerProduct = $('.product-section');
     
-        $.each(products, function (index, producto) {
-            productos.append(`
+        $.each(product, function (index, producto) {
+            containerProduct.append(`
             <div class="row g-0">
                 <div class="col-6 images-container">
                     <img src="${producto.imagen_1}" alt="${producto.nombre_categoria[index]}">
@@ -70,7 +73,7 @@ $(document).ready(function () {
                 <div class="col-6 info-product">
                     <h2 class="product-title">${producto.nombre_producto}</h2>
                     <h4 class="product-category">${producto.nombre_categoria}</h4>
-                    <span class="product-price">${producto.precio}</span>
+                    <span class="product-price">$${producto.precio}</span>
                     <div class="buttons-container">
                         <button class="btn-comprar" data-productId="1">Comprar💰</button>
                         <button class="btn-vender" data-productId="2">Agregar🛒</button>
@@ -82,8 +85,10 @@ $(document).ready(function () {
                 </div>
             </div>
             `);
+            console.log(producto);
         });
     }; 
 });
 
 // <p class="product-description">${description.length > 80 ? description.substring(0, 80).concat(' ... más') : description}</p>
+
