@@ -13,7 +13,7 @@ body{
     background-color: #f8f9fa;
 }
 
-/*.navbar{
+.navbar{
     background-color: rgb(3, 159, 176);
 }
 
@@ -334,6 +334,6 @@ a, p{
     padding: 5px;
     background: black;
     color: white;
-}
+} 
 
 

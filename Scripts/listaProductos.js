@@ -1,10 +1,19 @@
 const urlListaProductos = new URL("http://localhost:3000/lista-productos");
 
-let info="";
+let info = "";
 
-const V_productos=[];
+const V_productosApi=[];
+const V_productosBD=[];
 
 const producto = {
+    id:0,
+    nombre:"",
+    categoria:"",
+    precio:"",
+    descripcion:""
+}
+
+const productoBD = {
     id:0,
     nombre:"",
     categoria:"",
@@ -12,7 +21,7 @@ const producto = {
 }
 
 function addcar (id) {
-    debugger;
+    // debugger;
     let reg = info.filter(x=> x.id===id);
     let regs = info.filter(y=> y.id===id);
 
@@ -21,15 +30,18 @@ function addcar (id) {
     producto.categoria = reg[0].category;
     producto.precio = reg[0].price;
 
-    producto.id = regs[0].idproducto;
-    producto.nombre = regs[0].nombre_producto;
-    producto.descripcion = regs[0].nombre_categoria;
-    producto.precio = regs[0].precio;
+    V_productosApi.push(producto);
 
-    V_productos.push(producto);
-    let cant= V_productos.length;
+    productoBD.id = regs[0].idproducto;
+    productoBD.nombre = regs[0].nombre_producto;
+    productoBD.descripcion = regs[0].nombre_categoria;
+    productoBD.precio = regs[0].precio;
+
+    V_productosBD.push(productoBD);
+
+    let cant= V_productosApi.length;
     document.getElementById('cant').innerHTML= cant.toString();
-    localStorage.setItem("data",JSON.stringify(V_productos));
+    localStorage.setItem("data",JSON.stringify(V_productosApi));
 }
 
 
@@ -44,31 +56,49 @@ $(document).ready(function () {
             info = data;
             data.forEach(producto => {
                 productos.append(`
-                    <div class="product" id="product-${producto.id}">
-                        <a href="#!" class="link-product">
-                            <img src="${producto.image}" alt="${producto.category}" class="product-img">
-                            <div class="product-info">
-                                <h2 class="product-title">${producto.title}</h2>
-                                <h4 class="product-category">${producto.category}</h4>
-                                <div class="product-price-container">
-                                    <h3 class="product-price">$${producto.price}</h3>
+                    <div class="producto" id="product-${producto.id}">
+                        <a href="../Views/producto.html" class="link-producto" data-id="${producto.id}">
+                            <img src="${producto.image}" alt="${producto.category}" class="producto-img">
+                            <div class="producto-info">
+                                <h2 class="producto-title">${producto.title}</h2>
+                                <h4 class="producto-category">${producto.category}</h4>
+                                <p class="producto-description">${producto.description}</p>
+                                <div class="producto-price-container">
+                                    <h3 class="producto-price">$${producto.price}</h3>
                                     <button>
-                                        <a href="javascript:addcar(${producto.id});" data-productId="${producto.id}" class0-rt class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                                        <a href="javascript:addcar(${producto.id});" data-productId="${producto.id}" class0-rt class="add-to-car"><ion-icon name="cart-outline"></ion-icon></a>
                                     </button>
                                 </div>
                             </div>
                         </a>
                     </div>`);  
 
-                    let productoContainer = $('.product');
+                    let productContainer = $('.producto');
 
-                    productoContainer.each(() => {
-                        $(this).on('click', function () {
-                            const link = $(this).find('.link-product');
-                            const productUrl = link.attr('href');
+                    productContainer.each(function (index, element) {
+                        $(element).on('click', function () {
+                            const enlaceProducto = $('.link-producto');
+                            const productUrl = enlaceProducto.attr('href');
+
+                            // Obtén el valor del atributo "data-id" utilizando data()
+                            let idProducto = $(this).find('.link-producto').data('id');
+                            let title = $(this).find('.producto-title').text();
+                            let category = $(this).find('.producto-category').text();
+                            let image = $(this).find('.producto-img').attr('src');
+                            let price = $(this).find('.producto-price').text();
+                            let description = $(this).find('.producto-description').text();
+
+                            localStorage.setItem("Data",JSON.stringify({
+                                id: idProducto,
+                                title: title,
+                                category: category,
+                                image: image,
+                                price: price,
+                                description: description
+                            }));
     
                             // Redirige a la URL deseada
-                            // window.location.href = productUrl;
+                            window.location.href = productUrl;
                         });
                     });
             });
@@ -80,7 +110,6 @@ $(document).ready(function () {
 
     productosBD();
 });
-
 
 
 function productosBD() {
@@ -99,10 +128,6 @@ function productosBD() {
             if (content.sucess === true) {
                 mostrarProductos(content.data);
                 info = content.data;
-                // let id = content.data.idproducto;
-                // localStorage.setItem("id",JSON.stringify(id));
-                
-                
             } else {
                 alert('No se pudieron obtener los productos de la base de datos');
             }
@@ -125,7 +150,7 @@ function productosBD() {
                         <div class="product-price-container">
                             <h3 class="product-price">$${producto.precio}</h3>
                             <button>
-                                <a href="javascript:addcar(${producto.idproducto});" data-productId="${producto.idproducto}" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                                <a href="javascript:addcar(${producto.idproducto});" data-id="${producto.idproducto}" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></a>
                             </button>
                         </div>
                     </div>
@@ -134,21 +159,20 @@ function productosBD() {
 
             let productoContainer = $(".product");
 
-            productoContainer.each(() => {
-                $(this).on("click", function () {
-                const link = $(this).find(".link-product");
-                const productUrl = link.attr("href");
-                const idExport = producto.idproducto;
-                console.log(idExport);
-                localStorage.setItem("id",JSON.stringify(idExport));
-                // Redirige a la URL deseada
-                window.location.href = productUrl;
+            productoContainer.each(function (index, element) {
+                $(element).on("click", function () {
+                    const enlaceProduct = $('.link-product');
+                    const productoUrl = enlaceProduct.attr('href');
+
+                    // Obtén el valor del atributo "data-id" utilizando data()
+                    let idProducto = $(this).find('.add-to-cart').data('id');
+                    console.log(idProducto);
+                    localStorage.setItem("IdProducto",JSON.stringify(idProducto));
+            
+                    // Redirige a la URL deseada
+                    window.location.href = productoUrl;
                 });
             });
         });
     }; 
 };
-// content.data.forEach((elemento) => {
-//     const idExport = elemento.idproducto;
-//     console.log(idExport);
-// })

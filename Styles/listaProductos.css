@@ -185,7 +185,7 @@ body {
 }
 
 .product-description {
-    text-align: justify;
+    display: none;
 }
 
 .product-title,
@@ -256,6 +256,138 @@ body {
 
 
 
+/* Codigo Css Api ------------------------------------------------------------------------------------*/
+.producto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 58%, rgba(150,150,150,1) 100%);
+    border-radius: 0.6rem;
+    box-shadow: 0rem 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    transition: all 400ms ease;
+}
+
+.producto:hover {
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.4);
+    transform: translateY(-2.5%);
+}
+
+.producto .link-producto {
+    text-decoration: none;
+    color: #333;
+    cursor: grab;
+    /* background-color: aqua; */
+}
+
+.producto .producto-img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: fill;
+    margin-top: 1rem;
+    /* filter: drop-shadow(0 5rem 4rem #0009); */
+    /* box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5); */
+}
+
+.producto-info {
+    padding: 1rem;
+}
+
+.producto .producto-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    max-height: 5.5rem; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número de líneas a mostrar antes de agregar puntos suspensivos */
+    -webkit-box-orient: vertical;
+}
+
+.producto-category {
+    text-align: center;
+}
+
+.producto-description {
+    display: none;
+}
+
+.producto-title,
+.producto-description,
+.producto-category {
+    padding: 0.5rem 0;
+    color: black;
+}
+
+.producto-price-container {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+}
+
+.producto-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.producto-price-container button {
+    border: none;
+    background: transparent;
+    display: flex;
+}
+
+.producto-price-container button:hover{
+    animation-name: surprise;
+        -webkit-animation-name: surprise;
+        -moz-animation-name: surprise;
+    animation-duration: .8s;
+        -webkit-animation-duration: .8s;
+        -moz-animation-duration: .8s;
+}
+
+    @keyframes surprise
+    {
+        0% {transform: rotate(0deg) scale(1,1);}
+        10% {transform: rotate(7deg) scale(2,2);}
+        20% {transform: rotate(-7deg) scale(2,2);}
+        30% {transform: rotate(7deg) scale(2,2);}
+        40% {transform: rotate(-7deg) scale(2,2);}
+        50% {transform: rotate(7deg) scale(2,2);}
+        60% {transform: rotate(-7deg) scale(2,2);}
+        70% {transform: rotate(7deg) scale(2,2);}
+        80% {transform: rotate(-7deg) scale(2,2);}
+        90% {transform: rotate(7deg) scale(2,2);}
+        100% {transform: rotate(0deg) scale(1,1);}
+    }
+
+.add-to-car {
+    background: rgb(16, 8, 69);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: white;
+    border-radius: 1rem;
+}
+
+.add-to-car ion-icon {
+    font-size: 2.5rem;
+}
+
+/* -------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
 /* Paginación, cambio de páginas */
 
 .paginacion {
@@ -309,6 +441,7 @@ body {
 }
 
 
+/* Footer */
 
 .pie{
     background: black;

@@ -1,5 +1,5 @@
-import { id } from "./listaProductos";
-const urlProducto = `http://localhost:3000/producto/${id}`;
+const idProduct = localStorage.getItem('IdProducto');
+const urlProducto = `http://localhost:3000/producto/${idProduct}`;
 // const imagenes = $('.image-container');
 // const infoProducto = $('.info-product');
 // const imagenes = document.querySelector('.image-container');
@@ -31,9 +31,9 @@ const urlProducto = `http://localhost:3000/producto/${id}`;
 //     fetchProducts('https://fakestoreapi.com/products');
 // });
 
-const urlActual = window.location.pathname; // Esto te dará "/producto/5"
-const partesURL = urlActual.split('/'); // Dividir la URL en partes usando '/'
-const productId = partesURL[partesURL.length - 1]; // El último elemento en partesURL es el ID del producto
+// const urlActual = window.location.pathname; // Esto te dará "/producto/5"
+// const partesURL = urlActual.split('/'); // Dividir la URL en partes usando '/'
+// const productId = partesURL[partesURL.length - 1]; // El último elemento en partesURL es el ID del producto
 
 
 $(document).ready(function () {
@@ -50,7 +50,7 @@ $(document).ready(function () {
             const content = await rawResponse.json();
             
             if (content.sucess === true) {
-                mostrarProducto(content.data);
+                mostrarProductoBD(content.data);
             } else {
                 alert('No se pudieron obtener los productos');
             }
@@ -59,16 +59,19 @@ $(document).ready(function () {
         }
     })();
 
-    function mostrarProducto(product) {
+    function mostrarProductoBD(product) {
         const containerProduct = $('.product-section');
     
         $.each(product, function (index, producto) {
+            const images = [];
+            if (producto.imagen_1) images.push(`<img src="${producto.imagen_1}" alt="${producto.nombre_categoria}">`);
+            if (producto.imagen_2) images.push(`<img src="${producto.imagen_2}" alt="${producto.nombre_categoria}">`);
+            if (producto.imagen_3) images.push(`<img src="${producto.imagen_3}" alt="${producto.nombre_categoria}">`);
+
             containerProduct.append(`
             <div class="row g-0">
                 <div class="col-6 images-container">
-                    <img src="${producto.imagen_1}" alt="${producto.nombre_categoria[index]}">
-                    <img src="${producto.imagen_2}" alt="${producto.nombre_categoria[index]}">
-                    <img src="${producto.imagen_3}" alt="${producto.nombre_categoria[index]}">
+                    ${images.join('')}
                 </div>
                 <div class="col-6 info-product">
                     <h2 class="product-title">${producto.nombre_producto}</h2>
@@ -88,7 +91,45 @@ $(document).ready(function () {
             console.log(producto);
         });
     }; 
+
+    async function mostrarProductoApi() {
+        const data = localStorage.getItem("Data");
+        const producto = JSON.parse(data);
+        
+        const containerProducto = $('.product-section');
+
+        containerProducto.append(`
+            <div class="row g-0">
+                <div class="col-6 image-container">
+                    <img src="${producto.image}" alt="${producto.category}">
+                </div>
+                <div class="col-6 info-product">
+                    <h2 class="product-title">${producto.title}</h2>
+                    <h4 class="product-category">${producto.category}</h4>
+                    <span class="product-price">${producto.price}</span>
+                    <div class="buttons-container">
+                        <button class="btn-comprar" data-productId="1">Comprar💰</button>
+                        <button class="btn-vender" data-productId="2">Agregar🛒</button>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <h3 class="description-title">Descripción del producto</h3>
+                    <span>${producto.description}</span>
+                </div>
+            </div>`);
+    }; 
+
+    mostrarProductoApi();
+});
+
+window.addEventListener('beforeunload', function () {
+    // Eliminar toda la información relacionada con productos al salir de la página
+    localStorage.removeItem('Data');
+    localStorage.removeItem('IdProducto');
 });
 
 // <p class="product-description">${description.length > 80 ? description.substring(0, 80).concat(' ... más') : description}</p>
 
+{/* <img src="${producto.imagen_1}" alt="${producto.nombre_categoria}">
+                    <img src="${producto.imagen_2}" alt="${producto.nombre_categoria}">
+                    <img src="${producto.imagen_3}" alt="${producto.nombre_categoria}"></img> */}
