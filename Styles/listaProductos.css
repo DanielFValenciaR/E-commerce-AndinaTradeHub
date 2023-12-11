@@ -28,31 +28,55 @@ body {
 
 .navbar-nav-ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     gap: 20px;
     font-weight: bolder;
     list-style: none;
-    margin-top: 15px;
-    padding-right: 15vw;
+    /* margin-top: 15px;
+    padding-right: 15vw; */
+    margin-bottom: 0;
+}
+/* ------------------------------------------------------------------- */
+.icon-cart{
+    position: relative;
+    cursor: pointer;
 }
 
-.logo-cart{
-    padding-left: 20vw;
+.icon-cart svg {
+    width: 2.5rem;
+    color: white;
 }
 
-.image-cart{
+.icon-cart span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -2.4rem;
+}
+
+/* .image-cart{
     width: 25px;
     height: 25px;
     color:white;
-}
+} */
 
-.contador {
+/* .contador {
     border: 1px solid red;
     padding: 1.5px;
     background-color: red;
     border-radius:5000px;
     font-size: 13px;
-}
+} */
+/* ------------------------------------------------------------------------- */
 
 .navbar-brand{
     font-weight: bolder;
