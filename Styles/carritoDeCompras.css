@@ -5,6 +5,14 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
 .navbar{
     background-color: #029daf;
 }
@@ -21,32 +29,42 @@
     gap: 25px;
     font-weight: bolder;
     list-style: none;
-    margin-top: 15px;
-    padding-right: 18vw;
+    /* margin-top: 15px;
+    padding-right: 18vw; */
+    margin-bottom: 0;
 }
 
-.image-cart{
-    width: 50px;
-}
-
+/* ------------------------------------------------------------------- */
 .icon-cart{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
+    position: relative;
+    cursor: pointer;
 }
 
-.icon-cart span{
-    display:block;
-    width: 30px;
-    height: 30px;
-    background-color: #1b7b2c;
+.icon-cart svg {
+    width: 2.5rem;
+    color: white;
 }
+
+.icon-cart span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -2.4rem;
+}
+/* ------------------------------------------------------------------------- */
 
 
 .navbar-brand{
     font-weight: bolder;
     margin-left: 15px;
+    font-size: 20px;
 }
 .navbar-brand img{
     margin-right: 15px;
@@ -93,8 +111,13 @@
     color:white;
 }
 
+/* Main */
 
-.container-car{
+.container-cart {
+    background-color: transparent;
+}
+
+.container-info{
     border: 2px solid red;
     border-radius: 5px;
     box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.5);
@@ -103,13 +126,13 @@
     position: relative;
 }
 
-.container-car img{
+.container-info img{
     width: 160px;
     margin-top: -50px;
     border-radius: 5px;
 }
 
-.container-car .product-title{
+.container-info .product-title{
     margin: 25px 0;
     text-align: center;
     font-size: 23px;
@@ -165,6 +188,7 @@
 .container-total{
     padding: 0 20px;
 }
+
 .price-total{
     display: flex;
     justify-content: space-evenly;
@@ -176,7 +200,8 @@
 }
 
 .price-total h2{
-    font-size: 20px;
+    font-size: 35px;
+    color: black;
 }
 
 .price-total h3{
@@ -204,6 +229,8 @@
     -webkit-transform: translate(0px,5px);
     -moz-transform:translate(0px,5px);
 }
+
+/* Footer */
 
 .pie{
     background: black;

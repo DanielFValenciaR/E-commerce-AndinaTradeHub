@@ -1,42 +1,57 @@
 const idProduct = localStorage.getItem('IdProducto');
 const urlProducto = `http://localhost:3000/producto/${idProduct}`;
-// const imagenes = $('.image-container');
-// const infoProducto = $('.info-product');
-// const imagenes = document.querySelector('.image-container');
-// const infoProducto = document.querySelector('.info-product');
 
-// $(document).ready(() => {
-//     async function fetchProducts(url) {
-//         try {
-//             let res = await fetch(url);
-//             let data = await res.json();
+const iconCart = $(".icon-cart");
+const contador = $(".iconCartSpan");
 
-//             data.forEach(producto => {
-//                 imagenes.append(`<img src="${producto.image}" alt="${producto.category}" class="product-img">`);
+let productosCart = localStorage.getItem('Cart');
 
-//                 infoProducto.append(`
-//                     <h2 class="product-title">${producto.title}</h2>
-//                     <h4 class="product-category">${producto.category}</h4>
-//                     <h3 class="product-price">$${producto.price}</h3>
-//                     <div class="buttons-container">
-//                         <button class"btn-comprar" data-productId="${producto.id}">Comprar💰</button>
-//                         <button class"btn-vender" data-productId="${producto.id}">Agregar🛒</button>
-//                     </div>
-//                 `)
-//             });
-//         } catch (error) {
-//             console.log(error);
-//         };
-//     };
-//     fetchProducts('https://fakestoreapi.com/products');
-// });
+let contadorCart = [];
 
-// const urlActual = window.location.pathname; // Esto te dará "/producto/5"
-// const partesURL = urlActual.split('/'); // Dividir la URL en partes usando '/'
-// const productId = partesURL[partesURL.length - 1]; // El último elemento en partesURL es el ID del producto
+iconCart.on("click", function() {
+    window.location.href = "../Views/carritoDeCompras.html";
+});
+
+
+const addToCart = (id) => {
+    // let cantidadTotal = 0;
+
+    let positionCart = contadorCart.findIndex((value) => value.idProducto == id);
+
+    if (contadorCart <= 0) {
+        // Caso 1: El carrito está vacío, agrega el primer elemento.
+        contadorCart = [{
+            idProducto: id,
+            cantidad: 1
+        }];
+    } else if (positionCart < 0){
+        // Caso 2: El producto no está en el carrito, agregarlo.
+        contadorCart.push({
+            idProducto: id,
+            cantidad: 1
+        });
+    } else {
+        // Caso 3: El producto está en el carrito, incrementa la cantidad.
+        contadorCart[positionCart].cantidad = contadorCart[positionCart].cantidad + 1;
+    }
+    console.log(contadorCart);
+
+    // $.each(contadorCart, function(index, producto) {
+    //     cantidadTotal += producto.cantidad;
+    // });
+    
+    contador.text(contadorCart.length);
+
+    localStorage.setItem("Cart", JSON.stringify(contadorCart));
+}
 
 
 $(document).ready(function () {
+    if (productosCart) {
+        contadorCart = JSON.parse(productosCart);
+        contador.text(contadorCart.length);
+    }
+
     (async () => {
         try {
             const rawResponse = await fetch(urlProducto, {
@@ -79,7 +94,7 @@ $(document).ready(function () {
                     <span class="product-price">$${producto.precio}</span>
                     <div class="buttons-container">
                         <button class="btn-comprar" data-productId="1">Comprar💰</button>
-                        <button class="btn-vender" data-productId="2">Agregar🛒</button>
+                        <button class="btn-agregar" data-productId="2">Agregar🛒</button>
                     </div>
                 </div>
                 <div class="description-container">
@@ -92,7 +107,7 @@ $(document).ready(function () {
         });
     }; 
 
-    async function mostrarProductoApi() {
+    function mostrarProductoApi() {
         const data = localStorage.getItem("Data");
         const producto = JSON.parse(data);
         
@@ -108,8 +123,8 @@ $(document).ready(function () {
                     <h4 class="product-category">${producto.category}</h4>
                     <span class="product-price">${producto.price}</span>
                     <div class="buttons-container">
-                        <button class="btn-comprar" data-productId="1">Comprar💰</button>
-                        <button class="btn-vender" data-productId="2">Agregar🛒</button>
+                        <button class="btn-comprar" data-productId="${producto.id}">Comprar💰</button>
+                        <button class="btn-agregar" data-id="${producto.id}">Agregar🛒</button>
                     </div>
                 </div>
                 <div class="description-container">
@@ -117,6 +132,13 @@ $(document).ready(function () {
                     <span>${producto.description}</span>
                 </div>
             </div>`);
+        
+        $(".btn-agregar").on('click', (e) => {
+            e.preventDefault();
+            let productId = $(e.currentTarget).data('id');
+            addToCart(productId);
+            // console.log(productoId);
+        });
     }; 
 
     mostrarProductoApi();
