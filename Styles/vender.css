@@ -5,7 +5,7 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-body{
+.main-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,5 +335,18 @@ a, p{
     background: black;
     color: white;
 } 
+
+.derechos p:hover{
+    color:#ffffff;
+}
+
+.section a:hover{
+    color:#ffffff;
+}
+
+.cont-ubica p:hover{
+    color:#ffffff;
+}
+
 
 

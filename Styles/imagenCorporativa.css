@@ -240,6 +240,18 @@ a, p footer{
     justify-content: center;
     padding: 5px;
     background: black;
-    color: white;
+    color: rgba(255, 255, 255, 0.527);
+}
+
+.derechos p:hover{
+    color:#ffffff;
+}
+
+.section a:hover{
+    color:#ffffff;
+}
+
+.cont-ubica p:hover{
+    color:#ffffff;
 }
 
