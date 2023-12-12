@@ -43,49 +43,6 @@ const addToCart = (id) => {
 }
 
 
-// let info = "";
-// const V_productosBD=[];
-
-// const producto = {
-//     id:0,
-//     nombre:"",
-//     categoria:"",
-//     precio:"",
-//     descripcion:""
-// }
-
-// const productoBD = {
-//     id:0,
-//     nombre:"",
-//     categoria:"",
-//     precio:""
-// }
-
-// function addcar (id) {
-//     // debugger;
-//     let reg = info.filter(x=> x.id===id);
-//     let regs = info.filter(y=> y.id===id);
-
-//     producto.id = reg[0].id;
-//     producto.nombre = reg[0].title;
-//     producto.categoria = reg[0].category;
-//     producto.precio = reg[0].price;
-//     producto.descripcion = reg[0].description;
-
-//     V_productosApi.push(producto);
-
-//     productoBD.id = regs[0].idproducto;
-//     productoBD.nombre = regs[0].nombre_producto;
-//     productoBD.descripcion = regs[0].nombre_categoria;
-//     productoBD.precio = regs[0].precio;
-
-//     V_productosBD.push(productoBD);
-
-//     let cant= V_productosApi.length;
-//     document.getElementById('cant').innerHTML= cant.toString();
-//     localStorage.setItem("DataCarro",JSON.stringify(V_productosApi));
-// }
-
 $(document).ready(function () {
     //Traemos los elementos necesarios que extraemos de la api
     async function fetchProducts(url) {
@@ -94,6 +51,7 @@ $(document).ready(function () {
             let data = await res.json();
             listProductsApi = data;
             console.log(listProductsApi);
+            
             data.forEach(producto => {
                 productos.append(`
                     <div class="producto" id="product-${producto.id}">

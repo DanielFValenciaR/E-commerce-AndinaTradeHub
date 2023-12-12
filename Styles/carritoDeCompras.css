@@ -113,6 +113,7 @@ body {
 
 /* Main */
 
+
 .container-cart {
     background-color: transparent;
 }
@@ -122,14 +123,15 @@ body {
     border-radius: 5px;
     box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.5);
     padding: 15px 20px;
-    margin: 60px;
+    margin: 70px 70px 100px 70px;
     position: relative;
 }
 
 .container-info img{
-    width: 160px;
-    margin-top: -50px;
+    width: 100px;
+    margin-top: -70px;
     border-radius: 5px;
+    background-color: transparent;
 }
 
 .container-info .product-title{
