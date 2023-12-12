@@ -13,7 +13,6 @@ iconCart.on("click", function() {
 
 const addToCart = (id) => {
     // let cantidadTotal = 0;
-
     let positionCart = contadorCart.findIndex((value) => value.idProducto == id);
 
     if (contadorCart <= 0) {
@@ -42,7 +41,6 @@ const addToCart = (id) => {
 
     localStorage.setItem("Cart", JSON.stringify(contadorCart));
 }
-
 
 
 // let info = "";
