@@ -37,7 +37,6 @@ body {
 /* ------------------------------------------------------------------- */
 .icon-cart{
     position: relative;
-    cursor: pointer;
 }
 
 .icon-cart svg {

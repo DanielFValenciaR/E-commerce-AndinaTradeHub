@@ -1,11 +1,12 @@
 const urlCarrito = new URL("http://localhost:3000/carrito-de-compras");
-const iconCart = $(".icon-cart");
+// const iconCart = $(".icon-cart");
 const contador = $(".iconCartSpan");
 const containerCart = $(".container-cart");
 const precioTotal = $(".precio-total");
 const precioProducto = $(".product-price");
 
-let idProducto = "";
+// let idProducto = "";
+let idApi = "";
 
 let productosCart = localStorage.getItem('Cart');
 
@@ -17,6 +18,8 @@ $(document).ready(function () {
         contador.text(contadorCart.length); 
     }
 
+    let idProducto;
+
     async function fetchCart(url) {
         let res = await fetch(url);
         let data = await res.json();
@@ -26,12 +29,13 @@ $(document).ready(function () {
 
         $.each(contadorCart, function (index, cart) {
             let producto = data.find(item => item.id === cart.idProducto);
+            idApi = cart.idProducto;
             
             let precioProducto = producto.price * cart.cantidad;
             totalPrecio += precioProducto;
 
             containerCart.append(`
-                <section class="container-info" data-id="${producto.id}">
+                <section class="container-info">
                     <img src="${producto.image}">
                     <button class="btn-cerrar">
                         ❌
@@ -41,39 +45,46 @@ $(document).ready(function () {
                     <div class="container-price">
                         <h4 class="product-price">Precio: $${producto.price}</h4>
                         <div class="container-buttons">
-                            <button class="btn-less">
+                            <button class="btn-less" data-id="${producto.id}">
                                 -
                             </button>
-                            <span class="contador">
+                            <span class="contador" data-id="${producto.id}">
                                 ${cart.cantidad}
                             </span>
-                            <button class="btn-more">
+                            <button class="btn-more" data-id="${producto.id}">
                                 +
                             </button>
                         </div>
                     </div>
                 </section> 
             `);
+
+            $(".container-info").on("click", `.btn-less[data-id="${producto.id}"], .btn-more[data-id="${producto.id}"]`, (event) => {
+                let tipo = event.target.classList.contains('btn-more') ? "mas" : "menos";
+                idProducto = $(event.target).data('id');
+                cambiarCantidad(idProducto, tipo);
+            });
+
             precioTotal.text("$ " + totalPrecio);
 
-            $(".container-info").on("click", (event) => {
-                let posicionClick = $(event.target);
-                if (posicionClick.hasClass('btn-less') || posicionClick.hasClass('btn-more')) {
-                    // idProductApi = cart.idProducto;
-                    let container = $(this);
-                    idProducto = $('.container-info').data('id');
-                    console.log(idProducto);
-                    let tipo = "menos";
-                    if (posicionClick.hasClass('btn-more')) {
-                        tipo = "mas";
-                    }
-                    cambiarCantidad(idProducto, tipo);
+            // $(".container-info").on("click", (event) => {
+            //     let posicionClick = $(event.target);
+            //     if (posicionClick.hasClass('btn-less') || posicionClick.hasClass('btn-more')) {
+            //         let tipo = "menos";
+            //         let idProducto = posicionClick.data('id');
+            //         // idProducto = cart.idProducto;
+            //         // idProducto = $('.btn-less').data('id');
+            //         console.log(idProducto);
+            //         if (posicionClick.hasClass('btn-more')) {
+            //             tipo = "mas";
+            //             // idProducto = $('.btn-more').data('id');
+            //         }
+            //         cambiarCantidad(idProducto, tipo);
 
-                    // let productoActualizado = data.find(item => item.id === cart.idProducto);
-                    
-                    $(".contador").text(contadorCart.reduce((total, item) => total + item.cantidad, 0));
-                };
-            });
+            //         let cantidadProducto = contadorCart.find(item => item.idProducto === idProducto).cantidad;
+            //         $(`.contador[data-id="${idProducto}"]`).text(cantidadProducto);
+            //     };
+            // });
 
 
             const cambiarCantidad = (id, tipo) => {
@@ -82,15 +93,11 @@ $(document).ready(function () {
                     switch (tipo) {
                         case "mas":
                             // El producto está en el carrito, incrementa la cantidad.
-                            contadorCart[positionCart].cantidad = contadorCart[positionCart].cantidad + 1;
+                            contadorCart[positionCart].cantidad += 1;
                             break;
-                    
                         default:
-                            let valorCambio = contadorCart[positionCart].cantidad - 1;
-                            if (valorCambio > 0) {
-                                contadorCart[positionCart].cantidad = valorCambio;
-                            } else {
-                                contadorCart.splice(positionCart, 1);
+                            if (contadorCart[positionCart].cantidad > 1) {
+                                contadorCart[positionCart].cantidad -= 1;
                             }
                             break;
                     };
@@ -101,11 +108,13 @@ $(document).ready(function () {
                     return total + (producto.price * item.cantidad);
                 }, 0);
 
+                $(`.contador[data-id="${id}"]`).text(contadorCart[positionCart].cantidad);
+
                 precioTotal.text("$ " + totalPrecio);
 
                 localStorage.setItem("Cart", JSON.stringify(contadorCart));
             };
         });
     };
-    fetchCart(`https://fakestoreapi.com/products/${idProducto}`);
+    fetchCart(`https://fakestoreapi.com/products/${idApi}`);
 });
