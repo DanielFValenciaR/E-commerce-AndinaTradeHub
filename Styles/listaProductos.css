@@ -545,5 +545,17 @@ a, p{
     color: white;
 }
 
+.derechos p:hover{
+    color:#ffffff;
+}
+
+.section a:hover{
+    color:#ffffff;
+}
+
+.cont-ubica p:hover{
+    color:#ffffff;
+}
+
 
 

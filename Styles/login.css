@@ -5,9 +5,13 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-main{
+body{
     background-color: #d1dcff;
     background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+main{
+    
     display: flex;
     align-items: center;
     justify-content: center;
