@@ -119,7 +119,6 @@ body {
 }
 
 .container-info{
-    border: 2px solid red;
     border-radius: 5px;
     box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.5);
     padding: 15px 20px;
@@ -137,7 +136,9 @@ body {
 .container-info .product-title{
     margin: 25px 0;
     text-align: center;
-    font-size: 23px;
+    font-size: 2.3rem;
+    color:#029daf;
+    font-weight: bold;
 }
 
 .btn-cerrar{
@@ -158,7 +159,8 @@ body {
 }
 
 .container-price .product-price{
-    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .container-buttons{
@@ -202,12 +204,15 @@ body {
 }
 
 .price-total h2{
-    font-size: 35px;
-    color: black;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #029daf;
 }
 
 .price-total h3{
-    font-size: 30px;
+    font-size: 3.0rem;
+    font-weight: bold;
+    color: #029daf;
 }
 
 .container-btn{
@@ -223,6 +228,7 @@ body {
     transition: .5s, color .10s;
     -webkit-transition: .5s, color .10s;
     -moz-transition: .5s, color .10s;
+    font-weight: bold;
 }
 
 .btn-buy:hover{
@@ -326,5 +332,18 @@ a, p{
     background: black;
     color: white;
 }
+
+.derechos p:hover{
+    color:#ffffff;
+}
+
+.section a:hover{
+    color:#ffffff;
+}
+
+.cont-ubica p:hover{
+    color:#ffffff;
+}
+
 
 

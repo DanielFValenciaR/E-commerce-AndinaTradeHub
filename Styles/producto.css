@@ -176,13 +176,19 @@ main {
 }
 
 .info-product .product-title {
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1.8rem;
+    color: #029daf;
     text-align: center;
+    font-weight: bold;
+}
+
+.info-product .product-category {
+    font-size: 1.7rem;
 }
 
 .info-product .product-price {
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .product-title,
@@ -226,6 +232,9 @@ main {
 .description-title,
 .questions-title {
     margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color:#029daf;
 }
 
 .questions-container .question-form-container {
@@ -270,7 +279,7 @@ main {
 }
 
 span{
-    font-size: 23px;
+    font-size: 1.7rem;
 }
 .fb, .tw, .in, .li, .yt{
     padding: 8px;
@@ -343,4 +352,16 @@ a, p{
     padding: 5px;
     background: black;
     color: white;
+}
+
+.derechos p:hover{
+    color:#ffffff;
+}
+
+.section a:hover{
+    color:#ffffff;
+}
+
+.cont-ubica p:hover{
+    color:#ffffff;
 }
