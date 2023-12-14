@@ -57,7 +57,13 @@ $("#btnIniciar").on('click', function (event) {
             const content = await rawResponse.json();
 
             if (content.sucess === true) {
-                alert("Acceso concedido");
+                $("#btnIniciar").on('click', function (event) {
+                    event.preventDefault();
+                    $('modal').modal('hide')
+                }
+                );
+
+                /*alert("Acceso concedido");*/
                 limpiarLogin();
                 window.location.href = "../Views/listaProductos.html";
             } else {
