@@ -22,10 +22,16 @@ $(document).ready(function () {
             if (content.sucess === true) {
                 llenarSelect(content.data);
             } else {
-                alert('No se pudieron obtener las categorías');
+                $('.modal .modal-title').text('¡Atención!');
+                $('.modal .modal-body p').text('No se pudieron obtener las categorías'); 
+                $('.modal').modal('show');
+                /*alert('No se pudieron obtener las categorías');*/
             }
         } catch (error) {
-            console.error('Error al obtener categorías: ', error);
+                $('.modal .modal-title').text('¡Error!');
+                $('.modal .modal-body p').text('Error al obtener categorías: ', error); 
+                $('.modal').modal('show');
+            /*console.error('Error al obtener categorías: ', error);*/
         }
     })();
 
@@ -66,7 +72,10 @@ files.forEach((input, index) => {
             // Deshabilitar el input después de cargar la imagen
             input.disabled = true;
         } else {
-            console.log("No se ha seleccionado ninguna imagen");
+                $('.modal .modal-title').text('¡Advertencia!');
+                $('.modal .modal-body p').text('No se ha seleccionado ninguna imagen'); 
+                $('.modal').modal('show');
+            /*console.log("No se ha seleccionado ninguna imagen");*/
         };
     });
 });
@@ -128,15 +137,24 @@ $('#btn-confirmar').on('click', function (e) {
             console.log(content);
 
             if (content.sucess === true) {
-                alert("Producto creado exitosamente!");
+                $('.modal .modal-title').text('¡Validado!');
+                $('.modal .modal-body p').text('Producto creado exitosamente!'); 
+                $('.modal').modal('show');
+                /*alert("Producto creado exitosamente!");*/
                 limpiarProducto();
             } else {
-                alert("No pudo ser creado el producto");
+                $('.modal .modal-title').text('¡Error!');
+                $('.modal .modal-body p').text('No pudo ser creado el producto'); 
+                $('.modal').modal('show');
+                /*alert("No pudo ser creado el producto");*/
                 limpiarProducto();
             }
         })();
     } else {
-        alert(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`);
+        $('.modal .modal-title').text('¡Advertencia!');
+        $('.modal .modal-body p').text(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`); 
+        $('.modal').modal('show');
+        /*alert(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`);*/
     }
 });
 

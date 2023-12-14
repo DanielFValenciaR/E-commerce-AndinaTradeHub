@@ -84,6 +84,33 @@
     color:white;
 }
 
+/* Main */
+
+/*Actualización*/
+.modal-content{
+    border: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 14px black;
+}
+
+/*Actualización*/
+.modal-title{
+    font-weight: bold;
+    color:#029DAF;
+}
+
+.modal-body p {
+    color: black;
+}
+
+/*Actualización*/
+.btn-secondary{
+    border:#029DAF;
+    background-color:#029DAF;
+    font-weight: bold;
+    box-shadow: 0 0px 6px black;
+}
+
 .main-container{
     display: flex;
     justify-content: center;
