@@ -66,9 +66,10 @@ $(document).ready(function () {
             
             if (content.sucess === true) {
                 mostrarProductoBD(content.data);
-            } else {
-                alert('No se pudieron obtener los productos');
-            }
+            } 
+            // else {
+            //     alert('No se pudieron obtener los productos');
+            // }
         } catch (error) {
             console.error('Error al obtener productos: ', error);
         }

@@ -169,5 +169,15 @@ function crearCuerpoTabla() {
 }
 
 btnComprar.on("click", function() {
-    window.print();
+    $('.modal .modal-title').text('Productos a comprar');
+    $('.modal .modal-body p').text('¿Estás seguro que deseas comprar estos productos?');
+    $('.modal').modal('show');
+
+    $('.btn-primary').on('click', function(){
+        window.print();
+        localStorage.clear();
+        window.location.href = "../Views/listaProductos.html";
+        $('.modal').modal('hide');
+    });
 })
+
