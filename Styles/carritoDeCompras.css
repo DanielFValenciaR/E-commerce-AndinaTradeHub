@@ -241,6 +241,7 @@ body {
 /* Comprobar impresión */
 
 .container-comprar {
+    display: none;
     background-color: #62dab4
 }
 

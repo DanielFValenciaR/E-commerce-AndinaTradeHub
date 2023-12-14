@@ -37,9 +37,9 @@ $(document).ready(function () {
             totalPrecio += precioProducto;
 
             containerCart.append(`
-                <section class="container-info">
+                <section class="container-info" data-product-id="${producto.id}">
                     <img src="${producto.image}">
-                    <button class="btn-cerrar">
+                    <button class="btn-cerrar" data-id="${producto.id}">
                         ❌
                     </button>
                     <h3 class="product-title">${producto.title}</h3>
@@ -65,11 +65,35 @@ $(document).ready(function () {
                 let tipo = event.target.classList.contains('btn-more') ? "mas" : "menos";
                 idProducto = $(event.target).data('id');
                 cambiarCantidad(idProducto, tipo);
+                crearCuerpoTabla();
+            });
+
+            $(".container-info").on("click", `.btn-cerrar[data-id="${producto.id}"]`, (event) => {
+                let idProductoCerrar = $(event.target).data('id');
+                // Elimina el producto del contenedor
+                $(`.container-info[data-product-id="${idProductoCerrar}"]`).remove();
+
+                // Elimina el producto del localStorage
+                const indexCerrar = contadorCart.findIndex((value) => value.idProducto === idProductoCerrar);
+                if (indexCerrar >= 0) {
+                    contadorCart.splice(indexCerrar, 1);
+                    localStorage.setItem("Cart", JSON.stringify(contadorCart));
+                    contador.text(contadorCart.length);
+
+                    // Actualiza el precio total después de eliminar el producto
+                    totalPrecio = contadorCart.reduce((total, item) => {
+                        let producto = productosApi.find(producto => producto.id === item.idProducto);
+                        return total + (producto.price * item.cantidad);
+                    }, 0);
+                }
+                precioTotal.text("$ " + totalPrecio);
+                totalTable = precioTotal.text();
+                crearCuerpoTabla();
             });
 
             precioTotal.text("$ " + totalPrecio);
             totalTable = precioTotal.text();
-            console.log(totalTable);
+            console.log("Esto es" + totalTable);
 
             // $(".container-info").on("click", (event) => {
             //     let posicionClick = $(event.target);
@@ -115,7 +139,8 @@ $(document).ready(function () {
                 $(`.contador[data-id="${id}"]`).text(contadorCart[positionCart].cantidad);
 
                 precioTotal.text("$ " + totalPrecio);
-
+                totalTable = precioTotal.text();
+                
                 localStorage.setItem("Cart", JSON.stringify(contadorCart));
             };
         });
@@ -125,10 +150,11 @@ $(document).ready(function () {
 });
 
 function crearCuerpoTabla() {
+    cuerpoTabla.empty();
     $.each(contadorCart, function (index, cart) {
         let producto = productosApi.find(item => item.id === cart.idProducto);
-        console.log(producto);
-        console.log("Este es el total: " + totalTable);
+        // console.log(producto);
+        // console.log("Este es el total: " + totalTable);
     
         cuerpoTabla.append(`
             <tr>
@@ -139,7 +165,6 @@ function crearCuerpoTabla() {
             </tr>
         `);
     });
-
     totalTabla.text(totalTable);
 }
 
