@@ -91,6 +91,10 @@ main{
     color:white;
 }
 
+/* Main */
+.modal-body p {
+    color: black;
+}
 
 .container{
     background-color: #fff;

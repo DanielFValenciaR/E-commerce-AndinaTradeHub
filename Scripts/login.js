@@ -57,16 +57,15 @@ $("#btnIniciar").on('click', function (event) {
             const content = await rawResponse.json();
 
             if (content.sucess === true) {
-                $("#btnIniciar").on('click', function (event) {
-                    event.preventDefault();
-                    $('modal').modal('hide')
-                }
-                );
-
-                /*alert("Acceso concedido");*/
+                $('.modal .modal-title').text('Acceso concedido');
+                $('.modal .modal-body p').text('¡Bienvenido a AndinaTradeHub! Has accedido correctamente.');
+                $('.modal').modal('show');
                 limpiarLogin();
                 window.location.href = "../Views/listaProductos.html";
             } else {
+                $('.modal .modal-title').text('Acceso denegado');
+                $('.modal .modal-body p').text('Usuario o contraseña incorrectos, verifique y vuelva a intentar'); 
+                $('.modal').modal('show');
                 alert("Acceso denegado");
                 limpiarLogin();
             }
