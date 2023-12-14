@@ -60,8 +60,10 @@ $("#btnIniciar").on('click', function (event) {
                 $('.modal .modal-title').text('Acceso concedido');
                 $('.modal .modal-body p').text('¡Bienvenido a AndinaTradeHub! Has accedido correctamente.');
                 $('.modal').modal('show');
+                $('.btn-secondary').on('click', function(){
+                    window.location.href = "../Views/listaProductos.html";
+                })
                 limpiarLogin();
-                window.location.href = "../Views/listaProductos.html";
             } else {
                 $('.modal .modal-title').text('Acceso denegado');
                 $('.modal .modal-body p').text('Usuario o contraseña incorrectos, verifique y vuelva a intentar'); 
