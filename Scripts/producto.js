@@ -94,7 +94,7 @@ $(document).ready(function () {
                     <h4 class="product-category">${producto.nombre_categoria}</h4>
                     <span class="product-price">$${producto.precio}</span>
                     <div class="buttons-container">
-                        <button class="btn-comprar" data-productId="1">Comprar💰</button>
+                        
                         <button class="btn-agregar" data-productId="2">Agregar🛒</button>
                     </div>
                 </div>
@@ -104,6 +104,7 @@ $(document).ready(function () {
                 </div>
             </div>
             `);
+            // <button class="btn-comprar" data-productId="1">Comprar💰</button>
             console.log(producto);
         });
     }; 
@@ -123,8 +124,7 @@ $(document).ready(function () {
                     <h2 class="product-title">${producto.title}</h2>
                     <h4 class="product-category">${producto.category}</h4>
                     <span class="product-price">${producto.price}</span>
-                    <div class="buttons-container">
-                        <button class="btn-comprar" data-productId="${producto.id}">Comprar💰</button>
+                    <div class="buttons-container">                       
                         <button class="btn-agregar" data-id="${producto.id}">Agregar🛒</button>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ $(document).ready(function () {
                     <span>${producto.description}</span>
                 </div>
             </div>`);
-        
+            // <button class="btn-comprar" data-productId="${producto.id}">Comprar💰</button>
         $(".btn-agregar").on('click', (e) => {
             e.preventDefault();
             let productId = $(e.currentTarget).data('id');

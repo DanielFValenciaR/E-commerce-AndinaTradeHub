@@ -140,6 +140,10 @@ $('#btn-confirmar').on('click', function (e) {
                 $('.modal .modal-title').text('¡Validado!');
                 $('.modal .modal-body p').text('Producto creado exitosamente!'); 
                 $('.modal').modal('show');
+
+                $('.btn-secondary').on('click', function(){
+                    window.location.href = "../Views/listaProductos.html";
+                })
                 /*alert("Producto creado exitosamente!");*/
                 limpiarProducto();
             } else {
@@ -157,6 +161,10 @@ $('#btn-confirmar').on('click', function (e) {
         /*alert(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`);*/
     }
 });
+
+$('#btn-cancelar').on('click', function() {
+    limpiarProducto(); 
+})
 
 function limpiarProducto() {
     $("#selectCategoria").val("");
