@@ -113,6 +113,7 @@ body {
 /* Main */
 
 
+
 .container-cart {
     background-color: transparent;
 }
@@ -235,6 +236,80 @@ body {
     transform: translate(0px,5px);
     -webkit-transform: translate(0px,5px);
     -moz-transform:translate(0px,5px);
+}
+
+/* Comprobar impresión */
+
+.container-comprar {
+    background-color: #62dab4
+}
+
+.imprimir-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imprimir-container h1 {
+    margin: 4rem 0;
+    font-size: 4rem;
+}
+
+.imprimir-container h3 {
+    margin: 3rem 0 10rem 0;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.imprimir-container h4 {
+    margin: 15rem 0;
+    font-size: 3rem;
+}
+
+table {
+    margin: 3rem 0;
+    border: 0.1rem solid;
+    font-size: 2rem;
+    text-align: center;
+}
+
+table tr, th, td {
+    border: 0.1rem solid black;
+    padding: 1rem;
+}
+
+@keyframes showhide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hideshow {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media print {
+    body {
+        background-image: url(/Styles/Images/Logo/andinaTradeHub.png);
+        background-size: cover; /* Puedes ajustar esto según tus preferencias */
+    }
+
+    .navbar, .container-cart, .container-total, .pie {
+        display: none;
+    }
+    .container-comprar {
+        display: block;
+    }
 }
 
 /* Footer */

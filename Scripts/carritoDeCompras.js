@@ -1,15 +1,16 @@
 const urlCarrito = new URL("http://localhost:3000/carrito-de-compras");
-// const iconCart = $(".icon-cart");
 const contador = $(".iconCartSpan");
 const containerCart = $(".container-cart");
 const precioTotal = $(".precio-total");
 const precioProducto = $(".product-price");
-
-// let idProducto = "";
-let idApi = "";
+const btnComprar = $(".btn-buy");
+const cuerpoTabla = $(".fila-productos");
+const totalTabla = $(".total-price");
 
 let productosCart = localStorage.getItem('Cart');
-
+let idApi = "";
+let productosApi = "";
+let totalTable = "";
 let contadorCart = [];
 
 $(document).ready(function () {
@@ -23,7 +24,8 @@ $(document).ready(function () {
     async function fetchCart(url) {
         let res = await fetch(url);
         let data = await res.json();
-        console.log(data);
+        productosApi = data;
+        console.log(productosApi);
 
         let totalPrecio = 0;
 
@@ -66,6 +68,8 @@ $(document).ready(function () {
             });
 
             precioTotal.text("$ " + totalPrecio);
+            totalTable = precioTotal.text();
+            console.log(totalTable);
 
             // $(".container-info").on("click", (event) => {
             //     let posicionClick = $(event.target);
@@ -115,6 +119,30 @@ $(document).ready(function () {
                 localStorage.setItem("Cart", JSON.stringify(contadorCart));
             };
         });
+        crearCuerpoTabla();
     };
     fetchCart(`https://fakestoreapi.com/products/${idApi}`);
 });
+
+function crearCuerpoTabla() {
+    $.each(contadorCart, function (index, cart) {
+        let producto = productosApi.find(item => item.id === cart.idProducto);
+        console.log(producto);
+        console.log("Este es el total: " + totalTable);
+    
+        cuerpoTabla.append(`
+            <tr>
+                <td>${index + 1}</td>
+                <td>${producto.title}</td>
+                <td>$${producto.price}</td>
+                <td>${cart.cantidad}</td>
+            </tr>
+        `);
+    });
+
+    totalTabla.text(totalTable);
+}
+
+btnComprar.on("click", function() {
+    window.print();
+})
