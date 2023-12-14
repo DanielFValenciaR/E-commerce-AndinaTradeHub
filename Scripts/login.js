@@ -66,12 +66,15 @@ $("#btnIniciar").on('click', function (event) {
                 $('.modal .modal-title').text('Acceso denegado');
                 $('.modal .modal-body p').text('Usuario o contraseña incorrectos, verifique y vuelva a intentar'); 
                 $('.modal').modal('show');
-                alert("Acceso denegado");
+                /*alert("Acceso denegado");*/
                 limpiarLogin();
             }
         })();
     }else{
-        alert("Llene su usuario y contraseña para poder ingresar"); 
+        $('.modal .modal-title').text('Acceso denegado');
+                $('.modal .modal-body p').text('Llene su usuario y contraseña para poder ingresar'); 
+                $('.modal').modal('show');
+        /*alert("Llene su usuario y contraseña para poder ingresar");*/ 
     }
 });
 
@@ -119,18 +122,30 @@ $("#btnRegistrar").on('click', function (event) {
             const content = await rawResponse.json();
 
             if (content.message === 2) {
-                alert("El usuario ya se encuentra registrado. Por favor, elige otro nombre de usuario.");
+                $('.modal .modal-title').text('¡Atención!');
+                $('.modal .modal-body p').text('El usuario ya se encuentra registrado. Por favor, elige otro nombre de usuario.'); 
+                $('.modal').modal('show');
+                /*alert("El usuario ya se encuentra registrado. Por favor, elige otro nombre de usuario.");*/
             } else {
                 if (content.sucess === true) {
-                    alert("Usuario creado exitosamente!");
-                    limpiarCreacionUsuario();
+                    $('.modal .modal-title').text('¡Atención!');
+                    $('.modal .modal-body p').text('Usuario creado exitosamente!'); 
+                    $('.modal').modal('show');
+                        /*alert("Usuario creado exitosamente!");*/
+                        limpiarCreacionUsuario();
                 } else {
-                    alert("No pudo ser creado el usuario");
+                    $('.modal .modal-title').text('¡Atención!');
+                    $('.modal .modal-body p').text('No pudo ser creado el usuario'); 
+                    $('.modal').modal('show');
+                    /*alert("No pudo ser creado el usuario");*/
                 }
             }
         })();
     } else {
-        alert(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`);
+        $('.modal .modal-title').text('¡Atención!');
+        $('.modal .modal-body p').text(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`); 
+        $('.modal').modal('show');
+        /*alert(`Hay un campo vacío, no se puede continuar. Llene los campos: ${campos}`);*/
     }
 })
 
